@@ -6,12 +6,14 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 10:54:46 by atemfack          #+#    #+#             */
-/*   Updated: 2020/02/24 11:02:18 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/03/08 23:11:41 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_striter(char *s, void (*f)(char *))
 {
+	if (!(s))
+		return ;
 	while (*s)
 	{
 		f(s);

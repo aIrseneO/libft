@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 11:02:43 by atemfack          #+#    #+#             */
-/*   Updated: 2020/02/24 11:09:16 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/03/08 23:12:41 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 	unsigned int i;
 
 	i = 0;
-	while (*s)
-		f(i++, s++);
+	if (s)
+		while (*s)
+			f(i++, s++);
 }

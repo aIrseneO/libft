@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 19:01:43 by atemfack          #+#    #+#             */
-/*   Updated: 2020/02/27 21:20:30 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/03/08 23:44:54 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 void	ft_putendl(char const *s)
 {
+	if (!(s))
+		return ;
 	ft_putstr(s);
 	write(1, "\n", 1);
 }

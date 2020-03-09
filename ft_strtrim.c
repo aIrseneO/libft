@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 13:55:41 by atemfack          #+#    #+#             */
-/*   Updated: 2020/02/27 21:53:47 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/03/08 23:39:31 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ char	*ft_strtrim(char const *s)
 	size_t	len;
 	char	*new;
 
+	if (!(s))
+		return (NULL);
 	i = 0;
 	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
 		i++;
@@ -27,10 +29,7 @@ char	*ft_strtrim(char const *s)
 		return ("");
 	j = i;
 	while (s[len - 1] == ' ' || s[len - 1] == '\n' || s[len - 1] == '\t')
-	{
 		len--;
-		i++;
-	}
 	i = len - j;
 	if ((new = (char *)malloc(sizeof(*new) * (i + 1))) == NULL)
 		return (NULL);

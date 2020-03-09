@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 18:55:36 by atemfack          #+#    #+#             */
-/*   Updated: 2020/02/23 18:58:49 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/03/08 23:45:42 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	while (*s)
-		ft_putchar_fd(*s++, fd);
+	if (s)
+		while (*s)
+			ft_putchar_fd(*s++, fd);
 }

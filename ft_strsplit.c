@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 15:28:32 by atemfack          #+#    #+#             */
-/*   Updated: 2020/02/27 23:39:38 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/03/08 23:41:03 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ char			**ft_strsplit(char const *s, char c)
 	int		i;
 	int		index;
 
+	if (!(s))
+		return (NULL);
 	nbrs = ft_strcount(s, c);
 	if ((arr = (char **)malloc(sizeof(*arr) * (nbrs + 1))) == NULL)
 		return (NULL);

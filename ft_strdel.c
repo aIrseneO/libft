@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 22:41:00 by atemfack          #+#    #+#             */
-/*   Updated: 2020/02/24 13:07:20 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/03/08 23:08:04 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_strdel(char **as)
 {
 	char *s;
 
+	if (!(as))
+		return ;
 	s = *as;
 	free(s);
 	*as = NULL;

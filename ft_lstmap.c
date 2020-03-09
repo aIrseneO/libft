@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 16:15:28 by atemfack          #+#    #+#             */
-/*   Updated: 2020/02/27 21:07:03 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/03/08 23:56:35 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 	t_list *tmp;
 	t_list *tmp2;
 
-	if ((new = ft_lstcpy_el(ft_create_list(), f(lst))) == NULL)
+	if (!(lst) || (new = ft_lstcpy_el(ft_create_list(), f(lst))) == NULL)
 		return (NULL);
 	tmp2 = new;
 	if (!(lst))

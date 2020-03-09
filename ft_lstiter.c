@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 16:09:22 by atemfack          #+#    #+#             */
-/*   Updated: 2020/02/25 23:42:22 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/03/08 23:54:50 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
+	if (!(lst))
+		return ;
 	while (lst)
 	{
 		f(lst);
