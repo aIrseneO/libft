@@ -6,13 +6,13 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 10:54:46 by atemfack          #+#    #+#             */
-/*   Updated: 2020/03/08 23:11:41 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/03/09 19:59:46 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_striter(char *s, void (*f)(char *))
 {
-	if (!(s))
+	if (!(s) || !(f))
 		return ;
 	while (*s)
 	{

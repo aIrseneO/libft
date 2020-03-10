@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 13:55:41 by atemfack          #+#    #+#             */
-/*   Updated: 2020/03/08 23:39:31 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/03/09 20:41:49 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,27 @@
 char	*ft_strtrim(char const *s)
 {
 	int		i;
-	int		j;
-	int		k;
 	size_t	len;
 	char	*new;
 
 	if (!(s))
 		return (NULL);
-	i = 0;
-	while (s[i] == ' ' || s[i] == '\n' || s[i] == '\t')
-		i++;
-	if ((int)(len = ft_strlen(s)) == i)
-		return ("");
-	j = i;
+	while (*s == ' ' || *s == '\n' || *s == '\t')
+		s++;
+	if (!(len = ft_strlen(s)))
+	{
+		if ((new = (char *)malloc(sizeof(*new))) == NULL)
+			return (NULL);
+		*new = '\0';
+		return (new);
+	}
 	while (s[len - 1] == ' ' || s[len - 1] == '\n' || s[len - 1] == '\t')
 		len--;
-	i = len - j;
-	if ((new = (char *)malloc(sizeof(*new) * (i + 1))) == NULL)
+	if ((new = (char *)malloc(sizeof(*new) * (++len))) == NULL)
 		return (NULL);
-	k = 0;
-	while (i--)
-		new[k++] = s[j++];
-	new[k] = '\0';
+	i = 0;
+	while (len-- > 1)
+		new[i++] = *s++;
+	new[i] = '\0';
 	return (new);
 }
