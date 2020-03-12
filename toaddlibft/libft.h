@@ -1,5 +1,5 @@
-#ifndef HEADER_H
-# define HEADER_H
+#ifndef LIBFT_H
+# define LIBFT_H
 # include <stdio.h>
 # include <stdlib.h>
 
@@ -9,6 +9,8 @@ typedef struct s_tree
 	struct s_tree	*left;
 	struct s_tree	*right;
 }					t_tree;
+
+void            ft_swap(void *a, void *b);
 
 int		ft_max(int a, int b);
 int		ft_btree_height(t_tree *node);
