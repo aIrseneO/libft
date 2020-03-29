@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:29:47 by atemfack          #+#    #+#             */
-/*   Updated: 2020/02/29 00:20:54 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/03/29 02:04:36 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,13 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *nw);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+
+//void				ft_swap(int *a, int *b);
+//int				ft_max	(int a, int b);
+//char				*ft_strrev(char *str);
+//void				ft_sort_selection(int *tab, int size);
+//void				ft_sort_rselection(int *tab, int size);
+//void				ft_sort_bubble(int *tab, int size);
+//void				ft_sort_rbubble(int *tab, int size);
 
 #endif
