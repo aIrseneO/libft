@@ -89,17 +89,19 @@ typedef struct		s_tree
 | void | ft_lstdel | (t_list **alst, void (*del)(void *, size_t));|
 | void | ft_lstadd | (t_list **alst, t_list *nw);|
 | void | ft_lstiter | (t_list *lst, void (*f)(t_list *elem));|
-| t_list *| ft_lstmap | (t_list *lst, t_list *(*f)(t_list *elem));|
+| t_list *| ft_lstmap | (t_list *lst, t_list *(*f)(t_list *elem)) |
 
 | Output     | Function                        | Input  |
 | --------- |:---------------------------| :-----|
-| void | ft_swap | (int *a, int *b);|
-| int | ft_max | (int a, int b);|
-| char *| ft_strrev | (char *str);|
+| void | ft_swap | (int *a, int *b) |
+| int | ft_max | (int a, int b) |
+| char *| ft_strrev | (char *str) |
 
 | Output     | Function                        | Input  |
 | --------- |:---------------------------| :-----|
-| void | ft_sort_selection | (int *tab, int size); |
-| void | ft_sort_rselection | (int *tab, int size); |
-| void | ft_sort_bubble | (int *tab, int size); |
-| void | ft_sort_rbubble | (int *tab, int size); |
+| void | ft_sort_selection | (int *tab, int size) |
+| void | ft_sort_rselection | (int *tab, int size) |
+| void | ft_sort_bubble | (int *tab, int size) |
+| void | ft_sort_rbubble | (int *tab, int size) |
+| void | ft_sort_insertion | (int *tab, int size) |
+| void | ft_putarr| (int **arr, int row, int col, char *sep) |

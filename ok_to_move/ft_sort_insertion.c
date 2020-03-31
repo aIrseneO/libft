@@ -1,23 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_swap.c                                          :+:      :+:    :+:   */
+/*   ft_sort_insertion.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/28 23:40:55 by atemfack          #+#    #+#             */
-/*   Updated: 2020/03/30 21:28:59 by atemfack         ###   ########.fr       */
+/*   Created: 2020/03/30 19:48:27 by atemfack          #+#    #+#             */
+/*   Updated: 2020/03/30 23:45:29 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void    ft_swap(int *a, int *b) 
-{
-	int c;
+#include "libft.h"
 
-	if (a && b)
+void	ft_sort_insertion(int *tab, int size)
+{
+	int	i;
+	int	j;
+	int	k;
+
+	if (!(tab))
+		return ;
+	i = 1;
+	while (i < size)
 	{
-		c = *a; 
-		*a = *b;
-		*b = c;
+		j = i - 1;
+		k = i++;
+		while (j >= 0)
+		{
+			if (tab[k] < tab[j])
+			{
+				ft_swap(&tab[k], &tab[j]);
+				k = j;
+			}
+			j--;
+		}
 	}
 }
