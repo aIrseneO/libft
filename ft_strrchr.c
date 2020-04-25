@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 12:17:36 by atemfack          #+#    #+#             */
-/*   Updated: 2020/02/28 22:26:32 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/04/24 22:41:51 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ char	*ft_strrchr(char const *s, int c)
 {
 	size_t len;
 
+	if (!s)
+		return (NULL);
 	if (!(*s))
 	{
 		if (c == 0)

@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/21 22:11:12 by atemfack          #+#    #+#             */
-/*   Updated: 2020/02/21 22:50:00 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/04/24 22:41:16 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 char	*ft_strchr(char const *s, int c)
 {
+	if (!s)
+		return (NULL);
 	if ((char)c == '\0')
 		return ((char *)(s + ft_strlen(s)));
 	while (((char)c != *s) && (*s))

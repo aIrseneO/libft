@@ -1,18 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar.c                                       :+:      :+:    :+:   */
+/*   ft_sort_insertion.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/20 20:32:25 by atemfack          #+#    #+#             */
-/*   Updated: 2020/02/20 20:33:34 by atemfack         ###   ########.fr       */
+/*   Created: 2020/03/30 19:48:27 by atemfack          #+#    #+#             */
+/*   Updated: 2020/04/24 21:17:28 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "mylibft.h"
 
-void	ft_putchar(char c)
+void	ft_sort_insertion(int *tab, int size)
 {
-	write(1, &c, 1);
+	int	i;
+	int	j;
+	int	k;
+
+	if (!(tab))
+		return ;
+	i = 1;
+	while (i < size)
+	{
+		j = i - 1;
+		k = i++;
+		while (j >= 0)
+		{
+			if (tab[k] < tab[j])
+			{
+				ft_swap(&tab[k], &tab[j]);
+				k = j;
+			}
+			j--;
+		}
+	}
 }

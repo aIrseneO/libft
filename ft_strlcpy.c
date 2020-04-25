@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/19 19:54:05 by atemfack          #+#    #+#             */
-/*   Updated: 2020/04/20 00:20:20 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/04/22 14:53:40 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ size_t		ft_strlcpy(char *dst, char const *src, size_t size)
 {
 	size_t	i;
 	size_t	lens;
-
 
 	if (!src)
 		return (0);

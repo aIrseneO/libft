@@ -1,28 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdel.c                                        :+:      :+:    :+:   */
+/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/25 15:39:28 by atemfack          #+#    #+#             */
-/*   Updated: 2020/02/26 20:50:26 by atemfack         ###   ########.fr       */
+/*   Created: 2020/04/20 23:07:41 by atemfack          #+#    #+#             */
+/*   Updated: 2020/04/21 12:41:57 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
+void	ft_lstadd_back(t_list **lst, t_list *nw)
 {
-	t_list *tmp1;
-	t_list *tmp2;
-
-	tmp1 = *alst;
-	while (tmp1)
+	if (!lst || !nw)
+		return ;
+	if (!(*lst))
 	{
-		tmp2 = tmp1;
-		ft_lstdelone(&tmp1, del);
-		tmp1 = tmp2->next;
+		*lst = nw;
+		return ;
 	}
-	*alst = NULL;
+	ft_lstlast(*lst)->next = nw;
 }

@@ -5,37 +5,37 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/24 13:55:41 by atemfack          #+#    #+#             */
-/*   Updated: 2020/03/09 20:41:49 by atemfack         ###   ########.fr       */
+/*   Created: 2020/04/20 20:15:52 by atemfack          #+#    #+#             */
+/*   Updated: 2020/04/22 15:14:33 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strtrim(char const *s)
+char	*ft_strtrim(char const *s1, char const *set)
 {
 	int		i;
-	size_t	len;
-	char	*new;
+	char		*new;
+	size_t		len;
 
-	if (!(s))
+	if (!s1 || !set)
 		return (NULL);
-	while (*s == ' ' || *s == '\n' || *s == '\t')
-		s++;
-	if (!(len = ft_strlen(s)))
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	if (!(len = ft_strlen(s1)))
 	{
 		if ((new = (char *)malloc(sizeof(*new))) == NULL)
 			return (NULL);
 		*new = '\0';
 		return (new);
 	}
-	while (s[len - 1] == ' ' || s[len - 1] == '\n' || s[len - 1] == '\t')
+	while (ft_strchr(set, s1[len - 1]))
 		len--;
 	if ((new = (char *)malloc(sizeof(*new) * (++len))) == NULL)
 		return (NULL);
 	i = 0;
 	while (len-- > 1)
-		new[i++] = *s++;
+		new[i++] = *s1++;
 	new[i] = '\0';
 	return (new);
 }

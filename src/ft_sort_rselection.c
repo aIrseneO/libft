@@ -1,24 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_sort_rselection.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/20 20:50:35 by atemfack          #+#    #+#             */
-/*   Updated: 2020/02/20 23:50:24 by atemfack         ###   ########.fr       */
+/*   Created: 2020/03/29 00:35:09 by atemfack          #+#    #+#             */
+/*   Updated: 2020/04/24 21:18:11 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "mylibft.h"
 
-char	*ft_strncat(char *s1, char const *s2, size_t n)
+void	ft_sort_rselection(int *tab, int size)
 {
-	size_t lens1;
+	int	i;
+	int	j;
+	int	imax;
 
-	lens1 = ft_strlen(s1);
-	while ((*s2) && (n--))
-		s1[lens1++] = *s2++;
-	s1[lens1] = '\0';
-	return (s1);
+	if (!(tab))
+		return ;
+	j = 0;
+	while (j < size - 1)
+	{
+		i = j;
+		imax = i;
+		while (i++ < size - 1)
+			if (tab[imax] < tab[i])
+				imax = i;
+		ft_swap(&tab[imax], &tab[j++]);
+	}
 }

@@ -5,16 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/25 15:20:04 by atemfack          #+#    #+#             */
-/*   Updated: 2020/02/26 20:28:51 by atemfack         ###   ########.fr       */
+/*   Created: 2020/04/21 13:58:11 by atemfack          #+#    #+#             */
+/*   Updated: 2020/04/21 15:55:06 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list **alst, void (*del)(void *, size_t))
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	del((*alst)->content, (*alst)->content_size);
-	free(*alst);
-	*alst = NULL;
+	if (!lst)
+		return ;
+	if (del)
+		del(lst->content);
+	free(lst);
 }

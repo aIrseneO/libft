@@ -1,22 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl.c                                       :+:      :+:    :+:   */
+/*   ft_putarr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/23 19:01:43 by atemfack          #+#    #+#             */
-/*   Updated: 2020/03/08 23:44:54 by atemfack         ###   ########.fr       */
+/*   Created: 2020/04/24 21:35:14 by atemfack          #+#    #+#             */
+/*   Updated: 2020/04/24 23:30:05 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <unistd.h>
+#include "mylibft.h"
 
-void	ft_putendl(char const *s)
+void	ft_putarr_fd(int fd, int **arr, int row, int col, char *sep)
 {
-	if (!(s))
+	int	i;
+	int	j;
+
+	if (!(arr) || !(sep) || !(row) || !(col))
 		return ;
-	ft_putstr(s);
-	write(1, "\n", 1);
+	i = 0;
+	while (i < row)
+	{
+		j = 0;
+		while (j < col)
+		{
+			ft_putnbr_fd(arr[i][j], fd);
+			if (j++ < col - 1)
+				ft_putstr_fd(sep, fd);
+		}
+		ft_putchar_fd('\n', fd);
+		i++;
+	}
 }

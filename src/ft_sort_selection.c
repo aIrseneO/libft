@@ -1,25 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strequ.c                                        :+:      :+:    :+:   */
+/*   ft_sort_selection.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/26 23:12:12 by atemfack          #+#    #+#             */
-/*   Updated: 2020/03/08 23:19:39 by atemfack         ###   ########.fr       */
+/*   Created: 2020/04/21 23:56:19 by atemfack          #+#    #+#             */
+/*   Updated: 2020/04/24 21:18:02 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_strequ(char const *s1, char const *s2)
+#include "mylibft.h"
+
+void	ft_sort_selection(int *tab, int size)
 {
-	if (!(s1) || !(s2))
-		return (0);
-	while ((*s1 == *s2) && (*s1) && (*s2))
+	int	i;
+	int	j;
+	int	imin;
+
+	if (!(tab))
+		return ;
+	j = 0;
+	while (j < size - 1)
 	{
-		s1++;
-		s2++;
+		i = j;
+		imin = i;
+		while (i++ < size - 1)
+		{
+			if (tab[imin] > tab[i])
+				imin = i;
+		}
+		ft_swap(&tab[imin], &tab[j++]);
 	}
-	if (*s1 == *s2)
-		return (1);
-	return (0);
 }

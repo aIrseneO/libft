@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 20:38:28 by atemfack          #+#    #+#             */
-/*   Updated: 2020/02/20 22:25:19 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/04/24 22:30:04 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ size_t	ft_strlen(char const *s)
 	size_t count;
 
 	count = 0;
+	if (!s)
+		return (0);
 	while (*s++)
 		count++;
 	return (count);

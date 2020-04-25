@@ -6,15 +6,15 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/23 18:55:36 by atemfack          #+#    #+#             */
-/*   Updated: 2020/03/08 23:45:42 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/04/20 21:47:50 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <unistd.h>
 
 void	ft_putstr_fd(char const *s, int fd)
 {
 	if (s)
 		while (*s)
-			ft_putchar_fd(*s++, fd);
+			write(fd, s++, 1);
 }

@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 19:31:43 by atemfack          #+#    #+#             */
-/*   Updated: 2020/02/22 20:34:23 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/04/24 22:47:04 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strstr(char const *haystack, char const *needle)
 	char	*c;
 	size_t	len;
 
+	if (!haystack || !needle)
+		return (NULL);
 	if (!(len = ft_strlen(needle)))
 		return ((char *)haystack);
 	while (*haystack)

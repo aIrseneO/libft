@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 10:54:32 by atemfack          #+#    #+#             */
-/*   Updated: 2020/02/27 21:11:39 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/04/24 22:36:22 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	*ft_memchr(void const *s, int c, size_t n)
 {
+	if (!s)
+		return (NULL);
 	while (n && ((char)c != *((char *)s)))
 	{
 		s++;

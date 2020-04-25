@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/20 20:34:00 by atemfack          #+#    #+#             */
-/*   Updated: 2020/03/08 23:41:44 by atemfack         ###   ########.fr       */
+/*   Created: 2020/04/20 22:55:51 by atemfack          #+#    #+#             */
+/*   Updated: 2020/04/20 23:07:08 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putstr(char const *s)
+t_list	*ft_lstlast(t_list *lst)
 {
-	if (s)
-		while (*s)
-			write(1, s++, 1);
+	if (!lst)
+		return (lst);
+	while (lst->next)
+		lst = lst->next;
+	return (lst);
 }

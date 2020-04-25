@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/22 23:56:02 by atemfack          #+#    #+#             */
-/*   Updated: 2020/03/08 22:56:27 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/04/24 22:45:25 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int				ft_atoi(char const *str)
 	long long	nbr;
 	long long	signe;
 
+	if (!str)
+		return (-42);
 	while (*str == ' ' || *str == '\t' || *str == '\n' ||
 			*str == '\f' || *str == '\v' || *str == '\r')
 		str++;

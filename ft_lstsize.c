@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/21 09:42:14 by atemfack          #+#    #+#             */
-/*   Updated: 2020/02/29 01:25:15 by atemfack         ###   ########.fr       */
+/*   Created: 2020/04/20 22:39:16 by atemfack          #+#    #+#             */
+/*   Updated: 2020/04/20 22:55:02 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strncpy(char *dst, char const *src, size_t len)
+int	ft_lstsize(t_list *lst)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < len && *src)
-		dst[i++] = *src++;
-	if (i == len)
-		return (dst);
-	while (i < len)
-		dst[i++] = '\0';
-	return (dst);
+	if (!lst)
+		return (0);
+	return (ft_lstsize(lst->next) + 1);
 }

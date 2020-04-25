@@ -5,51 +5,33 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/25 16:15:28 by atemfack          #+#    #+#             */
-/*   Updated: 2020/03/08 23:56:35 by atemfack         ###   ########.fr       */
+/*   Created: 2020/04/21 16:40:18 by atemfack          #+#    #+#             */
+/*   Updated: 2020/04/22 14:38:35 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static t_list	*ft_create_list(void)
+static t_list	*lstmap(t_list *lst, void *(*f)(void *))
 {
-	t_list *list;
+	t_list	*tmp1;
+	t_list	*tmp2;
 
-	if ((list = malloc(sizeof(*list))) == NULL)
+	if (!lst->next)
+		return (ft_lstnew(f(lst->content)));
+	if ((tmp1 = lstmap(lst->next, f)) == NULL)
 		return (NULL);
-	list->next = NULL;
-	return (list);
+	if ((tmp2 = ft_lstnew(f(lst->content))) == NULL)
+		return (NULL);
+	ft_lstadd_front(&tmp1, tmp2);
+	return (tmp1);
 }
 
-static t_list	*ft_lstcpy_el(t_list *dest, t_list *src)
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *),
+		void (*del)(void *))
 {
-	if (dest == NULL)
+	if (!lst || !f)
 		return (NULL);
-	dest->content = src->content;
-	dest->content_size = src->content_size;
-	return (dest);
-}
-
-t_list			*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
-{
-	t_list *new;
-	t_list *tmp;
-	t_list *tmp2;
-
-	if (!(lst) || (new = ft_lstcpy_el(ft_create_list(), f(lst))) == NULL)
-		return (NULL);
-	tmp2 = new;
-	if (!(lst))
-		return (new);
-	lst = lst->next;
-	while (lst)
-	{
-		if ((tmp = ft_lstcpy_el(ft_create_list(), f(lst))) == NULL)
-			return (NULL);
-		new->next = tmp;
-		new = new->next;
-		lst = lst->next;
-	}
-	return (tmp2);
+	(void)del;
+	return (lstmap(lst, f));
 }

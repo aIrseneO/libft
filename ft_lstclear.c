@@ -1,38 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_sort_insertion.c                                :+:      :+:    :+:   */
+/*   ft_lstclear.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/03/30 19:48:27 by atemfack          #+#    #+#             */
-/*   Updated: 2020/03/30 23:45:29 by atemfack         ###   ########.fr       */
+/*   Created: 2020/04/21 15:23:43 by atemfack          #+#    #+#             */
+/*   Updated: 2020/04/22 14:33:53 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_sort_insertion(int *tab, int size)
+void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
-	int	i;
-	int	j;
-	int	k;
+	t_list	*tmp;
 
-	if (!(tab))
+	if (!lst)
 		return ;
-	i = 1;
-	while (i < size)
+	if (del)
 	{
-		j = i - 1;
-		k = i++;
-		while (j >= 0)
+		while (*lst)
 		{
-			if (tab[k] < tab[j])
-			{
-				ft_swap(&tab[k], &tab[j]);
-				k = j;
-			}
-			j--;
+			tmp = (*lst)->next;
+			del((*lst)->content);
+			free(*lst);
+			*lst = tmp;
 		}
 	}
+	else
+	{
+		while (*lst)
+		{
+			tmp = (*lst)->next;
+			free(*lst);
+			*lst = tmp;
+		}
+	}
+	lst = NULL;
 }
