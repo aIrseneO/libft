@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/23 19:21:52 by atemfack          #+#    #+#             */
-/*   Updated: 2020/04/20 21:54:34 by atemfack         ###   ########.fr       */
+/*   Created: 2020/02/23 18:26:08 by atemfack          #+#    #+#             */
+/*   Updated: 2020/05/22 22:24:26 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
-void	ft_putendl_fd(char const *s, int fd)
+void	ft_putchar_fd(char c, int fd)
 {
-	if (s)
-	{
-		while (*s)
-			write(fd, s++, 1);
-		write(fd, "\n", 1);
-	}
+	write(fd, &c, 1);
 }

@@ -1,37 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_check_fparameters3.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/23 18:13:29 by atemfack          #+#    #+#             */
-/*   Updated: 2020/04/20 21:48:14 by atemfack         ###   ########.fr       */
+/*   Created: 2020/05/11 00:26:56 by atemfack          #+#    #+#             */
+/*   Updated: 2020/05/12 00:26:23 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_printf.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_check_fparameters3(t_format *fpara)
 {
-	char		c;
-	long long	nbr;
-
-	nbr = n;
-	if (nbr < 0)
-	{
-		write(fd, "-", 1);
-		nbr *= -1;
-	}
-	if (nbr < 10)
-	{
-		c = nbr + 48;
-		write(fd, &c, 1);
-	}
-	if (nbr >= 10)
-	{
-		ft_putnbr_fd(nbr / 10, fd);
-		c = nbr % 10 + 48;
-		write(fd, &c, 1);
-	}
+	(void)fpara;
+	return (1);
 }

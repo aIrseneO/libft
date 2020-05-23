@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_specifier_f.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/23 18:55:36 by atemfack          #+#    #+#             */
-/*   Updated: 2020/04/20 21:47:50 by atemfack         ###   ########.fr       */
+/*   Created: 2020/05/11 09:08:28 by atemfack          #+#    #+#             */
+/*   Updated: 2020/05/19 16:00:22 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_printf.h"
 
-void	ft_putstr_fd(char const *s, int fd)
+int		ft_specifier_f(va_list args, t_format *fpara)
 {
-	if (s)
-		while (*s)
-			write(fd, s++, 1);
+	(void)args;
+	(void)fpara;
+	return (0);
 }

@@ -1,18 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
+/*   ft_perror.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/23 18:26:08 by atemfack          #+#    #+#             */
-/*   Updated: 2020/04/20 21:47:17 by atemfack         ###   ########.fr       */
+/*   Created: 2020/05/14 12:16:12 by atemfack          #+#    #+#             */
+/*   Updated: 2020/05/20 04:24:48 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_printf.h"
 
-void	ft_putchar_fd(char c, int fd)
+int	ft_perror(int errorno)
 {
-	write(fd, &c, 1);
+	if (errorno == -1)
+		ft_putstr_fd("\nError: Memory allocation faillure\n", 1);
+	if (errorno == -2)
+		ft_putstr_fd("\nError: Invalid Format\n", 1);
+	if (errorno == -42)
+		ft_putstr_fd("\nError: ...\n", 1);
+	return (errorno);
 }
