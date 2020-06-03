@@ -12,67 +12,86 @@
 
 NAME = libft.a 
 
-DYNAMIC = libft.so
+SRC_MY_LIBFT = my_libft/src/ft_swap.c my_libft/src/ft_max.c \
+	my_libft/src/ft_strrevs.c my_libft/src/ft_sort_selection.c \
+	my_libft/src/ft_sort_rselection.c my_libft/src/ft_sort_bubble.c \
+	my_libft/src/ft_sort_rbubble.c my_libft/src/ft_sort_insertion.c \
+	my_libft/src/ft_sort_rinsertion.c my_libft/src/ft_putarr_fd.c
 
-SRC_42 = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
-	ft_memchr.c ft_memcmp.c ft_calloc.c ft_memalloc.c ft_memdel.c \
-	ft_strnew.c ft_strdel.c ft_strclr.c ft_isalpha.c ft_isdigit.c \
-	ft_isalnum.c ft_isascii.c ft_isprint.c ft_toupper.c ft_tolower.c \
-	ft_strlen.c ft_strcpy.c ft_strlcpy.c ft_strcat.c ft_strlcat.c \
-	ft_strchr.c ft_strrchr.c ft_strstr.c ft_strnstr.c ft_strcmp.c \
-	ft_strncmp.c ft_atoi.c ft_strdup.c ft_substr.c ft_strjoin.c \
-	ft_strtrim.c ft_split.c ft_itoa.c ft_striter.c ft_striteri.c \
-	ft_strmap.c ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c \
-	ft_putendl_fd.c ft_putnbr_fd.c
+SRC_LIBFT_42 = libft_42/ft_memset.c libft_42/ft_bzero.c libft_42/ft_memcpy.c \
+	libft_42/ft_memccpy.c libft_42/ft_memmove.c libft_42/ft_memchr.c \
+	libft_42/ft_memcmp.c libft_42/ft_calloc.c libft_42/ft_memalloc.c \
+	libft_42/ft_memdel.c libft_42/ft_strnew.c libft_42/ft_strdel.c \
+	libft_42/ft_strclr.c libft_42/ft_isalpha.c libft_42/ft_isdigit.c \
+	libft_42/ft_isalnum.c libft_42/ft_isascii.c libft_42/ft_isprint.c \
+	libft_42/ft_toupper.c libft_42/ft_tolower.c libft_42/ft_strlen.c \
+	libft_42/ft_strcpy.c libft_42/ft_strlcpy.c libft_42/ft_strcat.c \
+	libft_42/ft_strlcat.c libft_42/ft_strchr.c libft_42/ft_strrchr.c \
+	libft_42/ft_strstr.c libft_42/ft_strnstr.c libft_42/ft_strcmp.c \
+	libft_42/ft_strncmp.c libft_42/ft_atoi.c libft_42/ft_strdup.c \
+	libft_42/ft_substr.c libft_42/ft_strjoin.c libft_42/ft_strtrim.c \
+	libft_42/ft_split.c libft_42/ft_itoa.c libft_42/ft_striter.c \
+	libft_42/ft_striteri.c libft_42/ft_strmap.c libft_42/ft_strmapi.c \
+	libft_42/ft_putchar_fd.c libft_42/ft_putstr_fd.c \
+	libft_42/ft_putendl_fd.c libft_42/ft_putnbr_fd.c \
+	libft_42/ft_lstnew.c libft_42/ft_lstadd_front.c libft_42/ft_lstsize.c \
+	libft_42/ft_lstlast.c libft_42/ft_lstadd_back.c libft_42/ft_lstdelone.c\
+	libft_42/ft_lstclear.c libft_42/ft_lstiter.c libft_42/ft_lstmap.c
 
-BONUS_SRC_42 = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
-	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c \
-	ft_lstmap.c
+SRC_FT_PRINTF = ft_printf/ft_printf.c ft_printf/ft_args1.c \
+	ft_printf/ft_extract_fparameters2.c ft_printf/ft_check_fparameters3.c \
+	ft_printf/ft_putargs4.c ft_printf/ft_perror.c \
+	ft_printf/ft_specifier_c.c ft_printf/ft_specifier_s.c \
+	ft_printf/ft_specifier_p.c ft_printf/ft_specifier_di.c \
+	ft_printf/ft_specifier_u.c ft_printf/ft_specifier_xx.c \
+	ft_printf/ft_specifier_mod.c ft_printf/ft_specifier_n.c \
+	ft_printf/ft_specifier_f.c
 
-SRC = src/ft_swap.c src/ft_max.c \
-	src/ft_strrevs.c src/ft_sort_selection.c \
-	src/ft_sort_rselection.c src/ft_sort_bubble.c src/ft_sort_rbubble.c \
-	src/ft_sort_insertion.c src/ft_sort_rinsertion.c src/ft_putarr_fd.c  
+SRC_GET_NEXT_LINE = get_next_line/get_next_line_bonus.c \
+	get_next_line/get_next_line_utils_bonus.c
 
-OBJ_42 = $(subst .c,.o,$(SRC_42))
+SRC = $(SRC_MY_LIBFT) $(SRC_LIBFT_42) $(SRC_FT_PRINTF) $(SRC_GET_NEXT_LINE)
 
-OBJ_BONUS_42 = $(subst .c,.o,$(BONUS_SRC_42))
+BUFFER_SIZE = 42
 
-OBJ1 = $(subst .c,.o,$(SRC))
+FD_SIZE = 42
 
-OBJ = $(subst src/f,f,$(OBJ1))
+HEADER_MY_LIBFT = my_libft/include
+
+HEADER_LIBFT_42 = libft_42/
+
+HEADER_FT_PRINTF = ft_printf/
+
+HEADER_GET_NEXT_LINE = get_next_line/
+
+OBJ1 = $(subst my_libft/src/ft,ft,$(SRC_MY_LIBFT)) \
+	$(subst libft_42/ft,ft,$(SRC_LIBFT_42)) \
+	$(subst ft_printf/ft,ft,$(SRC_FT_PRINTF)) \
+	$(subst get_next_line/get,get,$(SRC_GET_NEXT_LINE))
+
+OBJ = $(subst .c,.o,$(OBJ1))
 
 GW = gcc -Wall -Wextra -Werror
 
 all: $(NAME)
 
-so: $(SRC_42) $(BONUS_SRC)
-	$(GW) -fPIC -c $(SRC_42) $(BONUS_SRC_42)
-	gcc -shared -Wl,-soname,$(DYNAMIC) -o $(DYNAMIC) $(OBJ_42) \
-		$(OBJ_BONUS_42)
-
-$(NAME): $(SRC_42)
-	$(GW) -c $(SRC_42)
-	ar rc $(NAME) $(OBJ_42)
-	ranlib $(NAME)
-
-bonus: $(SRC_42) $(BONUS_SRC_42)
-	$(GW) -c $(SRC_42) $(BONUS_SRC_42)
-	ar rc $(NAME) $(OBJ_42) $(OBJ_BONUS_42)
-	ranlib $(NAME)
-
-full: $(SRC) $(SRC_42) $(BONUS_SRC_42)
-	$(GW) -c $(SRC_42) $(BONUS_SRC_42)
-	$(GW) -I ./include -c $(SRC)
-	ar rc $(NAME) $(OBJ) $(OBJ_42) $(OBJ_BONUS_42)
+$(NAME): $(SRC)
+	$(GW) -I $(HEADER_MY_LIBFT) -I $(HEADER_LIBFT_42) -I \
+		$(HEADER_FT_PRINTF) -c $(SRC_MY_LIBFT) $(SRC_LIBFT_42) \
+		$(SRC_FT_PRINTF)
+	$(GW) -D BUFFER_SIZE=$(BUFFER_SIZE) -D FD_SIZE=$(FD_SIZE) -I \
+		$(HEADER_GET_NEXT_LINE) $(HEADER) -c $(SRC_GET_NEXT_LINE)
+	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 
 clean:
-	/bin/rm -f $(OBJ) $(OBJ_42) $(OBJ_BONUS_42)
+	/bin/rm -f $(OBJ)
 
 fclean: clean
-	/bin/rm -f $(NAME) $(DYNAMIC)
+	/bin/rm -f $(NAME)
 
 re: fclean all
 
-.PHONY: clean fclean all re bunus full
+f: all clean
+
+.PHONY: all clean fclean re f

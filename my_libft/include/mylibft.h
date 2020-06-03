@@ -6,14 +6,14 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/24 20:37:48 by atemfack          #+#    #+#             */
-/*   Updated: 2020/04/24 21:34:42 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/06/02 23:20:56 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MYLIBFT_H
 # define MYLIBFT_H
 
-# include "../libft.h"
+# include "libft.h"
 
 void				ft_swap(int *a, int *b);
 int					ft_max(int a, int b);
@@ -27,6 +27,7 @@ void				ft_sort_insertion(int *tab, int size);
 void				ft_sort_rinsertion(int *tab, int size);
 
 
-void				ft_putarr_fd(int fd, int **arr, int row, int col, char *separator);
+void				ft_putarr_fd(int fd, int **arr, int row, 
+				int col, char *separator);
 
 #endif

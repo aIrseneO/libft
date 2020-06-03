@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/25 18:11:00 by atemfack          #+#    #+#             */
-/*   Updated: 2020/05/29 14:24:00 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/06/02 23:49:04 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 # include <sys/uio.h>
 # include <unistd.h>
 # include <stdlib.h>
-# define FD_SIZE 256
+//# define FD_SIZE 256
 
 size_t		ft_gnl_strlen(char const *s);
 char		*ft_gnl_strchr_endl(char const *s);
