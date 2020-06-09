@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/25 18:11:00 by atemfack          #+#    #+#             */
-/*   Updated: 2020/06/02 23:49:04 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/06/08 20:32:19 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,14 @@
 # include <sys/uio.h>
 # include <unistd.h>
 # include <stdlib.h>
-//# define FD_SIZE 256
+
+/* Default values for BUFFER_SIZE and FD_SIZE */
+# ifndef FD_SIZE
+#  define FD_SIZE 32
+# endif
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 128
+# endif
 
 size_t		ft_gnl_strlen(char const *s);
 char		*ft_gnl_strchr_endl(char const *s);
