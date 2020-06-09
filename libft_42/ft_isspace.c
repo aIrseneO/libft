@@ -1,24 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_perror.c                                        :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/14 12:16:12 by atemfack          #+#    #+#             */
-/*   Updated: 2020/05/20 04:24:48 by atemfack         ###   ########.fr       */
+/*   Created: 2020/06/09 00:30:58 by atemfack          #+#    #+#             */
+/*   Updated: 2020/06/09 00:35:21 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
-
-int	ft_perror(int errorno)
+int		ft_isspace(int c)
 {
-	if (errorno == -1)
-		ft_putstr_fd("\nError: Memory allocation faillure\n", 1);
-	if (errorno == -2)
-		ft_putstr_fd("\nError: Invalid Format\n", 1);
-	if (errorno == -42)
-		ft_putstr_fd("\nError: ...\n", 1);
-	return (errorno);
+	return (c == '\t' || c == '\n' || c == '\v' || c == '\f' || c == '\r' ||
+			c == ' ');
 }

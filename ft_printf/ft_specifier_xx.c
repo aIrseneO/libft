@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/11 19:45:23 by atemfack          #+#    #+#             */
-/*   Updated: 2020/05/19 21:57:17 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/06/08 23:46:46 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,16 +115,16 @@ int			ft_specifier_xx(va_list args, t_format *fpara)
 
 	nbr = va_arg(args, unsigned int);
 	if ((str = ft_utoa_hex_pf(nbr, fpara)) == NULL)
-		return (ft_perror(-1));
+		return (ft_pf_perror(-1));
 	if (*str == '0' && fpara->dot == '.' && !fpara->precision)
 		*str = '\0';
 	else if ((str = ft_add_precision(str, fpara, ft_strlen(str))) == NULL)
 	{
 		free(str);
-		return (ft_perror(-1));
+		return (ft_pf_perror(-1));
 	}
 	if (fpara->flags[3] == '#' && *str && nbr
 	&& (str = ft_add_0xx(str, ft_strlen(str), fpara->specifier)) == NULL)
-		return (ft_perror(-1));
+		return (ft_pf_perror(-1));
 	return (ft_put(str, (int)ft_strlen(str), fpara));
 }

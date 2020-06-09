@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 00:25:34 by atemfack          #+#    #+#             */
-/*   Updated: 2020/05/20 02:57:13 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/06/08 23:41:32 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ int			ft_extract_fparameters2(char *nformat, va_list args,
 	if (*nformat == 'h' || *nformat == 'l')
 		ft_extract_length(fpara, &nformat);
 	if (ft_strchr("cspdiuxX%nf", *nformat) == NULL)
-		return (ft_perror(-2));
+		return (ft_pf_perror(-2));
 	fpara->specifier = *nformat;
 	return (1);
 }

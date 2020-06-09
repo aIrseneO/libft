@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/12 00:22:37 by atemfack          #+#    #+#             */
-/*   Updated: 2020/05/19 10:22:44 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/06/08 23:41:09 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,14 +23,14 @@ static char	*ft_extract_format(char **format)
 		n++;
 	if (!((*format)[n++]))
 	{
-		ft_perror(-2);
+		ft_pf_perror(-2);
 		return (NULL);
 	}
 	specifiers = *format;
 	*format = *format + n;
 	if ((specifiers = ft_substr(specifiers, 0, n)) == NULL)
 	{
-		ft_perror(-1);
+		ft_pf_perror(-1);
 		return (NULL);
 	}
 	return (specifiers);
@@ -61,7 +61,7 @@ int			ft_args1(char **format, va_list args, int ct)
 	if ((fpara = (t_format *)malloc(sizeof(*fpara))) == NULL)
 	{
 		free(nformat);
-		return (ft_perror(-1));
+		return (ft_pf_perror(-1));
 	}
 	ft_initialize(fpara);
 	if (ft_extract_fparameters2(nformat, args, fpara) < 0)

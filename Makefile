@@ -24,23 +24,23 @@ SRC_LIBFT_42 = libft_42/ft_memset.c libft_42/ft_bzero.c libft_42/ft_memcpy.c \
 	libft_42/ft_memdel.c libft_42/ft_strnew.c libft_42/ft_strdel.c \
 	libft_42/ft_strclr.c libft_42/ft_isalpha.c libft_42/ft_isdigit.c \
 	libft_42/ft_isalnum.c libft_42/ft_isascii.c libft_42/ft_isprint.c \
-	libft_42/ft_toupper.c libft_42/ft_tolower.c libft_42/ft_strlen.c \
-	libft_42/ft_strcpy.c libft_42/ft_strlcpy.c libft_42/ft_strcat.c \
-	libft_42/ft_strlcat.c libft_42/ft_strchr.c libft_42/ft_strrchr.c \
-	libft_42/ft_strstr.c libft_42/ft_strnstr.c libft_42/ft_strcmp.c \
-	libft_42/ft_strncmp.c libft_42/ft_atoi.c libft_42/ft_strdup.c \
-	libft_42/ft_substr.c libft_42/ft_strjoin.c libft_42/ft_strtrim.c \
-	libft_42/ft_split.c libft_42/ft_itoa.c libft_42/ft_striter.c \
-	libft_42/ft_striteri.c libft_42/ft_strmap.c libft_42/ft_strmapi.c \
-	libft_42/ft_putchar_fd.c libft_42/ft_putstr_fd.c \
-	libft_42/ft_putendl_fd.c libft_42/ft_putnbr_fd.c \
-	libft_42/ft_lstnew.c libft_42/ft_lstadd_front.c libft_42/ft_lstsize.c \
-	libft_42/ft_lstlast.c libft_42/ft_lstadd_back.c libft_42/ft_lstdelone.c\
+	libft_42/ft_toupper.c libft_42/ft_tolower.c libft_42/ft_isspace.c \
+	libft_42/ft_strlen.c libft_42/ft_strcpy.c libft_42/ft_strlcpy.c \
+	libft_42/ft_strcat.c libft_42/ft_strlcat.c libft_42/ft_strchr.c \
+	libft_42/ft_strrchr.c libft_42/ft_strstr.c libft_42/ft_strnstr.c \
+	libft_42/ft_strcmp.c libft_42/ft_strncmp.c libft_42/ft_atoi.c \
+	libft_42/ft_strdup.c libft_42/ft_substr.c libft_42/ft_strjoin.c \
+	libft_42/ft_strtrim.c libft_42/ft_split.c libft_42/ft_itoa.c \
+	libft_42/ft_striter.c libft_42/ft_striteri.c libft_42/ft_strmap.c \
+	libft_42/ft_strmapi.c libft_42/ft_putchar_fd.c libft_42/ft_putstr_fd.c \
+	libft_42/ft_putendl_fd.c libft_42/ft_putnbr_fd.c libft_42/ft_lstnew.c \
+	libft_42/ft_lstadd_front.c libft_42/ft_lstsize.c libft_42/ft_lstlast.c \
+	libft_42/ft_lstadd_back.c libft_42/ft_lstdelone.c \
 	libft_42/ft_lstclear.c libft_42/ft_lstiter.c libft_42/ft_lstmap.c
 
 SRC_FT_PRINTF = ft_printf/ft_printf.c ft_printf/ft_args1.c \
 	ft_printf/ft_extract_fparameters2.c ft_printf/ft_check_fparameters3.c \
-	ft_printf/ft_putargs4.c ft_printf/ft_perror.c \
+	ft_printf/ft_putargs4.c ft_printf/ft_pf_perror.c \
 	ft_printf/ft_specifier_c.c ft_printf/ft_specifier_s.c \
 	ft_printf/ft_specifier_p.c ft_printf/ft_specifier_di.c \
 	ft_printf/ft_specifier_u.c ft_printf/ft_specifier_xx.c \

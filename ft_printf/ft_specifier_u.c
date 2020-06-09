@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/11 18:56:20 by atemfack          #+#    #+#             */
-/*   Updated: 2020/05/19 21:57:06 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/06/08 23:46:21 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,15 +98,15 @@ int			ft_specifier_u(va_list args, t_format *fpara)
 	if (!n && fpara->dot == '.' && !fpara->precision)
 	{
 		if ((str = ft_strdup("")) == NULL)
-			return (ft_perror(-1));
+			return (ft_pf_perror(-1));
 		return (ft_put(str, 0, fpara));
 	}
 	if ((str = ft_utoa((unsigned int)n)) == NULL)
-		return (ft_perror(-1));
+		return (ft_pf_perror(-1));
 	if ((str = ft_add_precision(str, fpara, ft_strlen(str))) == NULL)
 	{
 		free(str);
-		return (ft_perror(-1));
+		return (ft_pf_perror(-1));
 	}
 	return (ft_put(str, ft_strlen(str), fpara));
 }

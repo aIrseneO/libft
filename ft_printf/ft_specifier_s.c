@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/11 09:06:25 by atemfack          #+#    #+#             */
-/*   Updated: 2020/05/19 21:56:38 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/06/08 23:45:55 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int			ft_specifier_s(va_list args, t_format *fpara)
 	if (!str)
 		str = "(null)";
 	if ((str = ft_strdup(str)) == NULL)
-		return (ft_perror(-1));
+		return (ft_pf_perror(-1));
 	len = ft_strlen(str);
 	if (fpara->dot == '.' && fpara->precision >= 0
 			&& fpara->precision < (int)len)
