@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/24 20:37:48 by atemfack          #+#    #+#             */
-/*   Updated: 2020/06/02 23:20:56 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/06/11 00:02:56 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,5 @@ void				ft_sort_bubble(int *tab, int size);
 void				ft_sort_rbubble(int *tab, int size);
 void				ft_sort_insertion(int *tab, int size);
 void				ft_sort_rinsertion(int *tab, int size);
-
-
-void				ft_putarr_fd(int fd, int **arr, int row, 
-				int col, char *separator);
 
 #endif

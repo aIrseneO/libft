@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:29:47 by atemfack          #+#    #+#             */
-/*   Updated: 2020/06/09 00:35:59 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/06/11 00:07:08 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,8 @@ char				*ft_strnstr(char const *haystack, char const *needle, size_t len);
 int                                     ft_strcmp(char const *s1, char const *s2);//Old cursus
 int					ft_strncmp(char const *s1, char const *s2, size_t n);
 int					ft_atoi(char const *str);
+int					ft_atoi_base(char const *str, int base);
+char				*ft_utoa_base(unsigned int nb, int base);
 char				*ft_strdup(char const *s1);
 char				*ft_substr(char const *s, unsigned int start, size_t len);//*****
 char				*ft_strjoin(char const *s1, char const *s2);//*****
@@ -99,5 +101,9 @@ void                            ft_lstdelone(t_list *lst, void (*del)(void*));
 void                            ft_lstclear(t_list **lst, void (*del)(void*));
 void                            ft_lstiter(t_list *lst, void (*f)(void *));
 t_list                          *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
+
+/* Others */
+int					ft_rgbcolor(unsigned short r, unsigned 
+						short g, unsigned short b);
 
 #endif

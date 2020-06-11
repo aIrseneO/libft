@@ -15,16 +15,18 @@ NAME = My_libft.a
 SRC = src/ft_swap.c src/ft_max.c \
 	src/ft_strrevs.c src/ft_sort_selection.c \
 	src/ft_sort_rselection.c src/ft_sort_bubble.c src/ft_sort_rbubble.c \
-	src/ft_sort_insertion.c src/ft_sort_rinsertion.c src/ft_putarr_fd.c  
+	src/ft_sort_insertion.c src/ft_sort_rinsertion.c
 
 OBJ = $(subst .c,.o,$(SRC))
+
+HEADER = include
 
 GW = gcc -Wall -Wextra -Werror
 
 all: $(NAME)
 
 $(NAME): $(SRC)
-	$(GW) -c $(SRC)
+	$(GW) -I $(HEADER) -c $(SRC)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
 

@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:29:47 by atemfack          #+#    #+#             */
-/*   Updated: 2020/06/09 00:41:30 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/06/11 00:12:36 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ char				*ft_strtrim(char const *s1, char const *set);
 					//*****
 char				**ft_split(char const *s, char c);//*****
 char				*ft_itoa(int n);//*****
+int					ft_atoi_base(char const *str, int base);
+char				*ft_utoa_base(unsigned int nb, int base);
 void                            ft_striter(char *s, void (*f)(char *));
 					//*****//Old cursus
 void                            ft_striteri(char *s, void (*f)(unsigned int,
@@ -126,6 +128,9 @@ void				ft_sort_bubble(int *tab, int size);
 void				ft_sort_rbubble(int *tab, int size);
 void				ft_sort_insertion(int *tab, int size);
 void				ft_sort_rinsertion(int *tab, int size);
-void				ft_putarr_fd(int fd, int **arr, int row,
-					int col, char *separator);
+
+/* Others */
+int					ft_rgbcolor(unsigned short r, unsigned
+						short g, unsigned short b);
+
 #endif
