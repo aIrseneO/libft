@@ -36,7 +36,8 @@ SRC_LIBFT_42 = libft_42/ft_memset.c libft_42/ft_bzero.c libft_42/ft_memcpy.c \
 	libft_42/ft_putendl_fd.c libft_42/ft_putnbr_fd.c libft_42/ft_lstnew.c \
 	libft_42/ft_lstadd_front.c libft_42/ft_lstsize.c libft_42/ft_lstlast.c \
 	libft_42/ft_lstadd_back.c libft_42/ft_lstdelone.c \
-	libft_42/ft_lstclear.c libft_42/ft_lstiter.c libft_42/ft_lstmap.c \
+	libft_42/ft_lstdelhead.c libft_42/ft_lstclear.c libft_42/ft_lstiter.c \
+	libft_42/ft_lstmap.c \
 	libft_42/ft_atoi_base.c libft_42/ft_utoa_base.c  libft_42/ft_rgbcolor.c
 
 SRC_FT_PRINTF = ft_printf/ft_printf.c ft_printf/ft_args1.c \

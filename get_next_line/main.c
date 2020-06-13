@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/09 20:56:49 by atemfack          #+#    #+#             */
-/*   Updated: 2020/06/09 21:02:48 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/06/13 13:09:31 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@
 
 int get_next_line(const int fd, char **line);
 
+//gw -D BUFFER_SIZE=32 main.c get_next_line.c get_next_line_utils.c
+
 int main(int argc, char **argv)
 {
 	int		i, n, fd;
-	char	*line;
+	char	*line = NULL;
 
 	if (argc != 2)
 	{
@@ -34,13 +36,16 @@ int main(int argc, char **argv)
 		return (1);
 	}
 	i = 1;
-	while ((n = get_next_line(fd, &line)) > 0)
+	while ((n = get_next_line(fd, &line)) >= 0)
 	{
+		if (n == 0 && !(*line))
+		{
+			free(line);
+			break ;
+		}
 		printf("line %d: %s| n = %d\n", i++, line, n);
 		free(line);
 	}
-	printf("line %d: %s| n = %d\n", i, line, n);
-	free(line);
 	printf("<== n = %d ==>\n", n);
 	close(fd);
 	return (1);
