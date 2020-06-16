@@ -22,7 +22,7 @@ SRC = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	ft_strtrim.c ft_split.c ft_itoa.c ft_striter.c ft_striteri.c \
 	ft_strmap.c ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c \
 	ft_putendl_fd.c ft_putnbr_fd.c \
-	ft_rgbcolor.c ft_atoi_base.c ft_utoa_base.c
+	ft_rgbcolor.c ft_atoi_base.c ft_utoa_base.c ft_isfx_ptrmove.c
 
 SRC_BONUS = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 	ft_lstadd_back.c ft_lstdelone.c ft_lstdelhead.c ft_lstclear.c \
