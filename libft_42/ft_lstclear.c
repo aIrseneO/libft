@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/21 15:23:43 by atemfack          #+#    #+#             */
-/*   Updated: 2020/04/22 14:33:53 by atemfack         ###   ########.fr       */
+/*   Updated: 2020/06/17 21:53:12 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,4 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 			*lst = tmp;
 		}
 	}
-	lst = NULL;
 }
