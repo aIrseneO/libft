@@ -6,7 +6,7 @@
 #    By: atemfack <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/18 16:30:05 by atemfack          #+#    #+#              #
-#*   Updated: 2020/04/24 22:12:50 by atemfack         ###   ########.fr       *#
+#*   Updated: 2020/11/30 15:11:18 by atemfack         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,8 +55,8 @@ SRC_GET_NEXT_LINE = get_next_line/get_next_line_bonus.c \
 
 SRC = $(SRC_MY_LIBFT) $(SRC_LIBFT_42) $(SRC_FT_PRINTF) $(SRC_GET_NEXT_LINE)
 
+# Used in get_next_line
 BUFFER_SIZE = 42
-
 FD_SIZE = 42
 
 HEADER_MY_LIBFT = my_libft/include
