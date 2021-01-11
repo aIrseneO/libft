@@ -6,13 +6,30 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/04 13:30:02 by atemfack          #+#    #+#             */
-/*   Updated: 2020/05/19 21:58:37 by atemfack         ###   ########.fr       */
+/*   Updated: 2021/01/11 03:22:19 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_printf(const char *format, ...)
+static int	pf_write_all_text_before_format(const char **format)
+{
+	int			ct;
+	const char	*tmp;
+
+	ct = 0;
+	tmp = *format;
+	while (**format && **format != '%')
+	{
+		(*format)++;
+		ct++;
+	}
+	if (ct)
+		write(1, tmp, ct);
+	return (ct);
+}
+
+int	ft_printf(const char *format, ...)
 {
 	va_list			args;
 	int				ct;
@@ -25,16 +42,18 @@ int		ft_printf(const char *format, ...)
 	n = 0;
 	while (*format)
 	{
-		if (*format != '%')
-			ct += write(1, format++, 1);
-		else
+		ct += pf_write_all_text_before_format(&format);
+		if (*format == '%')
 		{
 			format++;
-			if ((n = ft_args1((char **)(&format), args, ct)) < 0)
+			n = pf_args1((char **)(&format), args, ct);
+			if (n < 0)
 				break ;
 			ct += n;
 		}
 	}
 	va_end(args);
-	return (n < 0 ? -1 : ct);
+	if (n < 0)
+		return (-1);
+	return (ct);
 }

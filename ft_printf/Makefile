@@ -6,44 +6,51 @@
 #    By: atemfack <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/18 16:30:05 by atemfack          #+#    #+#              #
-#*   Updated: 2020/05/19 20:56:00 by atemfack         ###   ########.fr       *#
+#*   Updated: 2021/01/11 03:18:25 by atemfack         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libftprintf.a
+NAME = printf.a
 
-SRC = ../libft_42/ft_memset.c ../libft_42/ft_memmove.c ../libft_42/ft_isdigit.c \
-	../libft_42/ft_strlen.c ../libft_42/ft_strcpy.c ../libft_42/ft_strchr.c \
-	../libft_42/ft_atoi.c ../libft_42/ft_strdup.c ../libft_42/ft_substr.c \
-	../libft_42/ft_itoa.c ../libft_42/ft_putstr_fd.c \
-	ft_printf.c ft_args1.c ft_extract_fparameters2.c \
-	ft_check_fparameters3.c ft_putargs4.c ft_pf_perror.c ft_specifier_c.c \
-	ft_specifier_s.c ft_specifier_p.c ft_specifier_di.c ft_specifier_u.c \
-	ft_specifier_xx.c ft_specifier_mod.c ft_specifier_n.c ft_specifier_f.c
+SRCS_LIBFT = ft_memset.c ft_memmove.c ft_isdigit.c ft_strlen.c ft_strcpy.c \
+	ft_strchr.c ft_atoi.c ft_strdup.c ft_substr.c ft_itoa.c ft_putstr_fd.c
 
-OBJ1 = $(subst .c,.o,$(SRC))
+SRCS = ft_printf.c pf_args1.c pf_extract_fparameters2.c \
+	pf_check_fparameters3.c pf_putargs4.c pf_specifier_c.c \
+	pf_specifier_s.c pf_specifier_p.c pf_specifier_di.c pf_specifier_u.c \
+	pf_specifier_xx.c pf_specifier_mod.c pf_specifier_n.c pf_specifier_f.c
 
-OBJ = $(subst ../libft_42/ft,ft,$(OBJ1))
+HEADER = ft_printf.h 
 
-GW = gcc -Wall -Wextra -Werror
+LIBFT_DIR = ../libft
+
+OBJS_LIBFT = $(subst .c,.o,$(SRCS_LIBFT))
+
+OBJS = $(subst .c,.o,$(SRCS))
+
+CFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(SRC)
-	$(GW) -I ../libft_42 -c $(SRC)
-	ar rc $(NAME) $(OBJ)
-	ranlib $(NAME)
+$(NAME): $(OBJS) $(OBJS_LIBFT) 
+	@ar rc $@ $^
+	@ranlib $(NAME)
 
-bonus: $(NAME)
+%.o: %.c $(HEADER)
+	$(CC) -I $(LIBFT_DIR) -c $(CFLAGS) -o $@ $<
+
+%.o:
+	@$(MAKE) $@ -C $(LIBFT_DIR)
+	@mv $(LIBFT_DIR)/$@ .
 
 clean:
-	/bin/rm -f $(OBJ)
+	@/bin/rm -f $(OBJS) $(OBJS_LIBFT)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	@/bin/rm -f $(NAME)
 
 re: fclean all
 
 f: all clean
 
-.PHONY: clean fclean all re bunus f
+.PHONY: clean fclean all re f

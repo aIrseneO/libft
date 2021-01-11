@@ -6,13 +6,13 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 01:22:44 by atemfack          #+#    #+#             */
-/*   Updated: 2020/05/29 21:35:53 by atemfack         ###   ########.fr       */
+/*   Updated: 2021/01/11 03:32:02 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line_bonus.h"
 
-static int	ft_gnl_free(int n, char *ptr, char **as)
+static int	gnl_free(int n, char *ptr, char **as)
 {
 	if (ptr)
 		free(ptr);
@@ -24,57 +24,61 @@ static int	ft_gnl_free(int n, char *ptr, char **as)
 	return (n);
 }
 
-static int	ft_gnl_extract_line(int fd, char *buffer, char **line,
-						char *reste)
+static int	gnl_extract_line(int fd, char *buffer, char **line, char *reste)
 {
 	int		n;
 	char	*s;
 
-
-	if ((*line = ft_gnl_strjoin(reste, NULL)) == NULL)
+	*line = gnl_strjoin(reste, NULL);
+	if (*line == NULL)
 		return (-1);
-	if (ft_gnl_strchr_endl(*line))
+	if (gnl_strchr_endl(*line))
 		return (1);
-	buffer[0] = '\0'; 
-	while (ft_gnl_strchr_endl(buffer) == NULL)
+	buffer[0] = '\0';
+	while (gnl_strchr_endl(buffer) == NULL)
 	{
-		if ((n = read(fd, buffer, BUFFER_SIZE)) == -1)
-			return (ft_gnl_free(-1, NULL, line));
+		n = read(fd, buffer, BUFFER_SIZE);
+		if (n == -1)
+			return (gnl_free(-1, NULL, line));
 		buffer[n] = '\0';
 		if (!n)
 			break ;
-		if ((s = ft_gnl_strjoin(*line, buffer)) == NULL)
-			return (ft_gnl_free(-1, NULL, line));
+		s = gnl_strjoin(*line, buffer);
+		if (s == NULL)
+			return (gnl_free(-1, NULL, line));
 		free(*line);
 		*line = s;
 	}
 	return (n);
 }
 
-static int	ft_gnl_clean_line(char **line, char **reste)
+static int	gnl_clean_line(char **line, char **reste)
 {
 	int		n;
 	char	*s;
 	char	*tmp;
 
-	if ((s = ft_gnl_strchr_endl(*line)) == NULL)
+	s = gnl_strchr_endl(*line);
+	if (s == NULL)
 		return (1);
 	if (*(s + 1))
 	{
-		if ((*reste = ft_gnl_strjoin(s + 1, NULL)) == NULL)
+		*reste = gnl_strjoin(s + 1, NULL);
+		if (*reste == NULL)
 			return (-1);
 	}
 	n = s - *line;
-	if ((s = (char *)malloc(sizeof(*s) * (n + 1))) == NULL)
-		return (ft_gnl_free(-1, NULL, reste));
+	s = (char *)malloc(sizeof(*s) * (n + 1));
+	if (s == NULL)
+		return (gnl_free(-1, NULL, reste));
 	s[n] = '\0';
 	tmp = *line;
-	*line = ft_gnl_strncpy(s, *line, n);
+	*line = gnl_strncpy(s, *line, n);
 	free(tmp);
 	return (1);
 }
 
-int			get_next_line(int fd, char **line)
+int	get_next_line(int fd, char **line)
 {
 	int			n;
 	char		*buffer;
@@ -82,21 +86,22 @@ int			get_next_line(int fd, char **line)
 
 	if (fd < 0 || fd > FD_SIZE || BUFFER_SIZE < 1 || !(line))
 		return (-1);
-	if (BUFFER_SIZE <= 0)
-		return (-1);
 	if (!(reste[fd]))
 	{
-		if ((reste[fd] = (char *)malloc(sizeof(char))) == NULL)
+		reste[fd] = (char *)malloc(sizeof(char));
+		if (reste[fd] == NULL)
 			return (-1);
 		*reste[fd] = '\0';
 	}
-	if (!(buffer = (char *)malloc(sizeof(*buffer) * (BUFFER_SIZE + 1))))
-		return (ft_gnl_free(-1, NULL, &reste[fd]));
+	buffer = (char *)malloc(sizeof(*buffer) * (BUFFER_SIZE + 1));
+	if (buffer == NULL)
+		return (gnl_free(-1, NULL, &reste[fd]));
 	buffer[BUFFER_SIZE] = '\0';
-	if (ft_gnl_free((n = ft_gnl_extract_line(fd, buffer, line, reste[fd])),
-			buffer, &reste[fd]) < 1)
+	n = gnl_extract_line(fd, buffer, line, reste[fd]);
+	if (gnl_free(n, buffer, &reste[fd]) < 1)
 		return (n);
-	if ((n = ft_gnl_clean_line(line, &reste[fd])) == -1)
-		return (ft_gnl_free(n, NULL, line));
+	n = gnl_clean_line(line, &reste[fd]);
+	if (n == -1)
+		return (gnl_free(n, NULL, line));
 	return (n);
 }

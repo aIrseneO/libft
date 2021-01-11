@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/25 18:11:00 by atemfack          #+#    #+#             */
-/*   Updated: 2020/06/08 20:32:42 by atemfack         ###   ########.fr       */
+/*   Updated: 2021/01/11 03:33:39 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 128 
 # endif
-size_t		ft_gnl_strlen(char const *s);
-char		*ft_gnl_strchr_endl(char const *s);
-char		*ft_gnl_strncpy(char *dst, char const *src, int n);
-char		*ft_gnl_strjoin(char const *s1, char const *s2);
+size_t		gnl_strlen(char const *s);
+char		*gnl_strchr_endl(char const *s);
+char		*gnl_strncpy(char *dst, char const *src, int n);
+char		*gnl_strjoin(char const *s1, char const *s2);
 int			get_next_line(int fd, char **line);
 
 #endif

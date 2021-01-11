@@ -6,13 +6,13 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/25 18:02:59 by atemfack          #+#    #+#             */
-/*   Updated: 2020/05/29 14:08:49 by atemfack         ###   ########.fr       */
+/*   Updated: 2021/01/11 03:32:34 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_gnl_strlen(char const *s)
+size_t	gnl_strlen(char const *s)
 {
 	size_t	count;
 
@@ -23,7 +23,7 @@ size_t	ft_gnl_strlen(char const *s)
 	return (count);
 }
 
-char	*ft_gnl_strchr_endl(char const *s)
+char	*gnl_strchr_endl(char const *s)
 {
 	if (!s)
 		return (NULL);
@@ -34,7 +34,7 @@ char	*ft_gnl_strchr_endl(char const *s)
 	return ((char *)s);
 }
 
-char	*ft_gnl_strncpy(char *dst, char const *src, int n)
+char	*gnl_strncpy(char *dst, char const *src, int n)
 {
 	int		i;
 
@@ -44,14 +44,15 @@ char	*ft_gnl_strncpy(char *dst, char const *src, int n)
 	return (dst);
 }
 
-char	*ft_gnl_strjoin(char const *s1, char const *s2)
+char	*gnl_strjoin(char const *s1, char const *s2)
 {
 	size_t	i;
 	size_t	len;
 	char	*s;
 
-	len = ft_gnl_strlen(s1) + ft_gnl_strlen(s2);
-	if ((s = (char *)malloc(sizeof(*s) * (len + 1))) == NULL)
+	len = gnl_strlen(s1) + gnl_strlen(s2);
+	s = (char *)malloc(sizeof(*s) * (len + 1));
+	if (s == NULL)
 		return (NULL);
 	i = 0;
 	while (*s1)
