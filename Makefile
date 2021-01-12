@@ -6,7 +6,7 @@
 #    By: atemfack <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/18 16:30:05 by atemfack          #+#    #+#              #
-#*   Updated: 2021/01/11 16:33:04 by atemfack         ###   ########.fr       *#
+#*   Updated: 2021/01/11 21:12:09 by atemfack         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,9 +19,7 @@ SRCS_FT_PRINTF = ft_printf.c pf_args1.c pf_extract_fparameters2.c \
 
 SRCS_GET_NEXT_LINE = get_next_line_bonus.c get_next_line_bonus_utils.c
 
-SRC = $(SRC_MY_LIBFT) $(SRC_LIBFT_42) $(SRC_FT_PRINTF) $(SRC_GET_NEXT_LINE)
-
-SRCS_LIBFT = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
+SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	ft_memchr.c ft_memcmp.c ft_calloc.c ft_memalloc.c ft_memdel.c ft_strdel.c \
 	ft_strnew.c ft_stralloc.c ft_strclr.c ft_isalpha.c ft_isdigit.c \
 	ft_isalnum.c ft_isascii.c ft_isprint.c ft_toupper.c ft_tolower.c \
@@ -30,8 +28,8 @@ SRCS_LIBFT = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	ft_strcmp.c ft_strncmp.c ft_atoi.c ft_strdup.c ft_substr.c ft_strjoin.c \
 	ft_strtrim.c ft_split.c ft_itoa.c ft_striter.c ft_striteri.c \
 	ft_strmap.c ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c \
-	ft_putendl_fd.c ft_putnbr_fd.c ft_lsttoastr.c \
-	ft_lstnew2.c ft_lstnew3.c ft_astrtolst.c \
+	ft_putendl_fd.c ft_putnbr_fd.c ft_ternary.c \
+	ft_lstnew2.c ft_lstnew3.c ft_astrtolst.c ft_lsttoastr.c \
 	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstiter.c \
 	ft_lstadd_back.c ft_lstdelone.c ft_lstdelhead.c ft_lstclear.c ft_lstmap.c \
 	ft_rgbcolor.c ft_atoi_base.c ft_utoa_base.c ft_isfx_ptrmove.c ft_strrevs.c \
@@ -50,28 +48,28 @@ LIBFT_DIR = libft
 
 OBJS_FT_PRINTF = $(subst .c,.o,$(SRCS_FT_PRINTF))
 OBJS_GET_NEXT_LINE =$(subst .c,.o,$(SRCS_GET_NEXT_LINE))
-OBJS_LIBFT =$(subst .c,.o,$(SRCS_LIBFT))
+OBJS =$(subst .c,.o,$(SRCS))
 
 all: $(NAME)
 
-$(NAME): $(OBJS_FT_PRINTF) $(OBJS_GET_NEXT_LINE) $(OBJS_LIBFT)
+$(NAME): $(OBJS_FT_PRINTF) $(OBJS_GET_NEXT_LINE) $(OBJS)
 	@ar rc $@ $^
-	@ranlib $(NAME)
+	ranlib $(NAME)
 
 $(OBJS_FT_PRINTF):
-	@$(MAKE) $@ -C $(FT_PRINTF_DIR)
+	@$(MAKE) --no-print-directory $@ -C $(FT_PRINTF_DIR)
 	@mv $(FT_PRINTF_DIR)/$@ .
 
 $(OBJS_GET_NEXT_LINE):
-	@$(MAKE) $@ -C $(GET_NEXT_LINE_DIR)
+	@$(MAKE) --no-print-directory $@ -C $(GET_NEXT_LINE_DIR)
 	@mv $(GET_NEXT_LINE_DIR)/$@ .
 
 %.o:
-	@$(MAKE) $@ -C $(LIBFT_DIR)
+	@$(MAKE) --no-print-directory $@ -C $(LIBFT_DIR)
 	@mv $(LIBFT_DIR)/$@ .
 
 clean:
-	@/bin/rm -f $(OBJS_FT_PRINTF) $(OBJS_GET_NEXT_LINE) $(OBJS_LIBFT)
+	@/bin/rm -f $(OBJS_FT_PRINTF) $(OBJS_GET_NEXT_LINE) $(OBJS)
 
 fclean: clean
 	@/bin/rm -f $(NAME)

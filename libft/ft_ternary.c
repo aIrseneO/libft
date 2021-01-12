@@ -1,21 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_ternary.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/09 22:15:21 by atemfack          #+#    #+#             */
-/*   Updated: 2021/01/11 18:47:47 by atemfack         ###   ########.fr       */
+/*   Created: 2021/01/11 19:30:04 by atemfack          #+#    #+#             */
+/*   Updated: 2021/01/11 19:33:59 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//gw -I .. main.c libftprintf.a
+/* What if you weren't allowed to use the ternary (?:) operator */
 
-#include "ft_printf.h"
-#include <stdio.h>
-int	main(void)
+void *ft_ternary(int logic, void *value1, void *value2)
 {
-	ft_printf("42\n");
-	return (1);
+	if (logic)
+		return (value1);
+	return (value2);
 }

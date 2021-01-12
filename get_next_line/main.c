@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/09 20:56:49 by atemfack          #+#    #+#             */
-/*   Updated: 2021/01/09 23:32:10 by atemfack         ###   ########.fr       */
+/*   Updated: 2021/01/11 19:11:03 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@
 
 int get_next_line(const int fd, char **line);
 
-//gw -D BUFFER_SIZE=32 main.c get_next_line.c get_next_line_utils.c
-
+//gw -D BUFFER_SIZE=42 main.c get_next_line.c get_next_line_utils.c
+//gw -D BUFFER_SIZE=42 main.c get_next_line.a
 int main(int argc, char **argv)
 {
 	int		i, n, fd;

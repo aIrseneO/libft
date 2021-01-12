@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:29:47 by atemfack          #+#    #+#             */
-/*   Updated: 2021/01/11 16:29:16 by atemfack         ###   ########.fr       */
+/*   Updated: 2021/01/11 19:35:33 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,7 @@ void	ft_sort_insertion(int *tab, int size);
 void	ft_sort_rinsertion(int *tab, int size);
 
 /* Others */
+void	*ft_ternary(int logic, void *value1, void *value2);
 int		ft_rgbcolor(unsigned short r, unsigned short g, unsigned short b);
 
 char	*ft_getcwd(void);

@@ -6,7 +6,7 @@
 #*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        *#
 #*                                                +#+#+#+#+#+   +#+           *#
 #*   Created: 2021/01/09 00:38:21 by atemfack          #+#    #+#             *#
-#*   Updated: 2021/01/11 00:01:06 by atemfack         ###   ########.fr       *#
+#*   Updated: 2021/01/11 21:07:02 by atemfack         ###   ########.fr       *#
 #*                                                                            *#
 #* ************************************************************************** *#
 
@@ -20,24 +20,23 @@ OBJS = $(subst .c,.o,$(SRCS))
 
 CFLAGS = -Wall -Wextra -Werror
 
-BUFFER_SIZE = 42
+BUF_SIZE = 42
 FD_SIZE = 8
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ar rc $@ $^
-	@ranlib $(NAME)
+	ar rc $@ $^
+	ranlib $(NAME)
 
 %.o: %.c $(HEADER)
-	@$(CC) $(CFLAGS) -D BUFFER_SIZE=$(BUFFER_SIZE) -D FD_SIZE=$(FD_SIZE) \
-		-c -o $@ $<
+	$(CC) $(CFLAGS) -D BUFFER_SIZE=$(BUF_SIZE) -D FD_SIZE=$(FD_SIZE) -c -o $@ $<
 
 clean:
-	@/bin/rm -f $(OBJS)
+	/bin/rm -f $(OBJS)
 
 fclean: clean
-	@/bin/rm -f $(NAME)
+	/bin/rm -f $(NAME)
 
 re: fclean all
 
