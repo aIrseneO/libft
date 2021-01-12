@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:29:47 by atemfack          #+#    #+#             */
-/*   Updated: 2021/01/10 05:40:03 by atemfack         ###   ########.fr       */
+/*   Updated: 2021/01/11 16:29:16 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int		ft_memcmp(void const *s1, void const *s2, size_t n);
 void	*ft_calloc(size_t nmemb, size_t size);
 void	*ft_memalloc(size_t size);//*****//Old cursus
 void	ft_memdel(void **ap);//*****//Old cursus
+char	*ft_stralloc(char **str, size_t size);
 char	*ft_strnew(size_t size);//*****//Old cursus
 void	ft_strdel(char **as);//*****//Old cursus
 void	ft_strclr(char *s);//*****//Old cursus

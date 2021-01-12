@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/11 19:45:23 by atemfack          #+#    #+#             */
-/*   Updated: 2021/01/11 03:05:39 by atemfack         ###   ########.fr       */
+/*   Updated: 2021/01/11 16:49:23 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,8 @@ static char	*pf_utoa_hex_pf(unsigned long long int nbr, t_format *fpara)
 		j /= 16;
 		i++;
 	}
-	str = (char *)malloc(sizeof(*str) * (i + 1));
-	if (str == NULL)
+	if (ft_stralloc(&str, i) == NULL)
 		return (NULL);
-	str[i] = '\0';
 	if (!nbr)
 		str[0] = '0';
 	while (nbr)
@@ -58,8 +56,7 @@ static char	*pf_add_precision(char *str, t_format *fpara, size_t n)
 		return (str);
 	if ((int)n < precision)
 	{
-		s = (char *)malloc(sizeof(*s) * (precision + 1));
-		if (s == NULL)
+		if (ft_stralloc(&s, precision) == NULL)
 			return (NULL);
 		n = (size_t)precision - n;
 		s = ft_memset(s, '0', n);
