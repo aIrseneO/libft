@@ -6,18 +6,18 @@
 #    By: atemfack <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/18 16:30:05 by atemfack          #+#    #+#              #
-#*   Updated: 2021/01/11 21:12:09 by atemfack         ###   ########.fr       *#
+#*   Updated: 2021/01/13 02:06:56 by atemfack         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a 
 
-SRCS_FT_PRINTF = ft_printf.c pf_args1.c pf_extract_fparameters2.c \
+SRCS_FT_PRINTF 		= ft_printf.c pf_args1.c pf_extract_fparameters2.c \
 	pf_check_fparameters3.c pf_putargs4.c pf_specifier_c.c \
 	pf_specifier_s.c pf_specifier_p.c pf_specifier_di.c pf_specifier_u.c \
 	pf_specifier_xx.c pf_specifier_mod.c pf_specifier_n.c pf_specifier_f.c
 
-SRCS_GET_NEXT_LINE = get_next_line_bonus.c get_next_line_bonus_utils.c
+SRCS_GET_NEXT_LINE	= get_next_line_bonus.c get_next_line_bonus_utils.c
 
 SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	ft_memchr.c ft_memcmp.c ft_calloc.c ft_memalloc.c ft_memdel.c ft_strdel.c \
@@ -39,43 +39,43 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	ft_astrprint.c ft_astrinit.c ft_astrfree.c ft_astrnfree.c ft_astrsize.c 
 
 # Used in get_next_line
-BUFFER_SIZE = 42
-FD_SIZE = 42
+BUFFER_SIZE			= 42
+FD_SIZE 			= 42
 
-FT_PRINTF_DIR = ft_printf
-GET_NEXT_LINE_DIR = get_next_line
-LIBFT_DIR = libft
+FT_PRINTF_DIR		= ft_printf
+GET_NEXT_LINE_DIR	= get_next_line
+LIBFT_DIR			= libft
 
-OBJS_FT_PRINTF = $(subst .c,.o,$(SRCS_FT_PRINTF))
-OBJS_GET_NEXT_LINE =$(subst .c,.o,$(SRCS_GET_NEXT_LINE))
-OBJS =$(subst .c,.o,$(SRCS))
+OBJS_FT_PRINTF		= $(subst .c,.o,$(SRCS_FT_PRINTF))
+OBJS_GET_NEXT_LINE	=$(subst .c,.o,$(SRCS_GET_NEXT_LINE))
+OBJS				= $(subst .c,.o,$(SRCS))
 
-all: $(NAME)
+all:		$(NAME)
 
-$(NAME): $(OBJS_FT_PRINTF) $(OBJS_GET_NEXT_LINE) $(OBJS)
-	@ar rc $@ $^
-	ranlib $(NAME)
+$(NAME):	$(OBJS_FT_PRINTF) $(OBJS_GET_NEXT_LINE) $(OBJS)
+			@ar rc $@ $^
+			ranlib $(NAME)
 
 $(OBJS_FT_PRINTF):
-	@$(MAKE) --no-print-directory $@ -C $(FT_PRINTF_DIR)
-	@mv $(FT_PRINTF_DIR)/$@ .
+			@$(MAKE) --no-print-directory $@ -C $(FT_PRINTF_DIR)
+			@mv $(FT_PRINTF_DIR)/$@ .
 
 $(OBJS_GET_NEXT_LINE):
-	@$(MAKE) --no-print-directory $@ -C $(GET_NEXT_LINE_DIR)
-	@mv $(GET_NEXT_LINE_DIR)/$@ .
+			@$(MAKE) --no-print-directory $@ -C $(GET_NEXT_LINE_DIR)
+			@mv $(GET_NEXT_LINE_DIR)/$@ .
 
 %.o:
-	@$(MAKE) --no-print-directory $@ -C $(LIBFT_DIR)
-	@mv $(LIBFT_DIR)/$@ .
+			@$(MAKE) --no-print-directory $@ -C $(LIBFT_DIR)
+			@mv $(LIBFT_DIR)/$@ .
 
 clean:
-	@/bin/rm -f $(OBJS_FT_PRINTF) $(OBJS_GET_NEXT_LINE) $(OBJS)
+			@/bin/rm -f $(OBJS_FT_PRINTF) $(OBJS_GET_NEXT_LINE) $(OBJS)
 
-fclean: clean
-	@/bin/rm -f $(NAME)
+fclean: 	clean
+			@/bin/rm -f $(NAME)
 
-re: fclean all
+re: 		fclean all
 
-f: all clean
+f: 			all clean
 
-.PHONY: all clean fclean re f
+.PHONY: 	all clean fclean re f

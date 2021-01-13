@@ -6,7 +6,7 @@
 #    By: atemfack <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/18 16:30:05 by atemfack          #+#    #+#              #
-#*   Updated: 2021/01/11 20:51:24 by atemfack         ###   ########.fr       *#
+#*   Updated: 2021/01/13 02:07:04 by atemfack         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,29 +32,29 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	ft_astrprint.c ft_astrinit.c ft_astrfree.c ft_astrnfree.c ft_astrsize.c
 	
 	
-HEADER = libft.h
+HEADER		= libft.h
 
-OBJS = $(subst .c,.o,$(SRCS))
+OBJS		= $(subst .c,.o,$(SRCS))
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS		= -Wall -Wextra -Werror
 
-all: $(NAME)
+all:		$(NAME)
 
-$(NAME): $(OBJS)
-	ar rcs $@ $^
-	ranlib $(NAME)
+$(NAME):	$(OBJS)
+			ar rcs $@ $^
+			ranlib $(NAME)
 
-%.o: %.c $(HEADER)
-	$(CC) -c $(CFLAGS) -o $@ $<
+%.o: 		%.c $(HEADER)
+			$(CC) -c $(CFLAGS) -o $@ $<
 
 clean:
-	/bin/rm -f $(OBJS)
+			/bin/rm -f $(OBJS)
 
-fclean: clean
-	/bin/rm -f $(NAME)
+fclean: 	clean
+			/bin/rm -f $(NAME)
 
-re: fclean all
+re: 		fclean all
 
-f:	all clean
+f:			all clean
 
-.PHONY: all clean fclean re f
+.PHONY: 	all clean fclean re f
