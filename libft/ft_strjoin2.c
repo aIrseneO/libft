@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 02:09:04 by atemfack          #+#    #+#             */
-/*   Updated: 2021/01/10 22:57:39 by atemfack         ###   ########.fr       */
+/*   Updated: 2021/01/12 22:37:31 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,8 @@ char	*ft_strjoin2(char const *s1, char const *s2, char const *s3)
 	size_t	i;
 	char	*s;
 
-	if (!(s1) || !(s2) || !(s3))
-		return (NULL);
+	if (s3 == NULL)
+		return (ft_strjoin(s1, s2));
 	s = (char *)malloc(sizeof(*s) * (ft_strlen(s1) + ft_strlen(s2)
 				+ ft_strlen(s3) + 1));
 	if (s == NULL)
