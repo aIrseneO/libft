@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/21 15:23:43 by atemfack          #+#    #+#             */
-/*   Updated: 2020/06/17 21:53:12 by atemfack         ###   ########.fr       */
+/*   Updated: 2021/01/22 03:13:30 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		{
 			tmp = (*lst)->next;
 			del((*lst)->content);
+			(*lst)->content = NULL;
 			free(*lst);
 			*lst = tmp;
 		}

@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/10 01:56:14 by atemfack          #+#    #+#             */
-/*   Updated: 2021/01/10 04:22:37 by atemfack         ###   ########.fr       */
+/*   Updated: 2021/01/22 03:14:28 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ void	ft_astrfree(char ***astr, void (*del)(void *))
 	{
 		i = 0;
 		while ((*astr)[i])
-			del((*astr)[i++]);
+		{
+			del((*astr)[i]);
+			(*astr)[i++] = NULL;
+		}
 	}
 	free(*astr);
 	*astr = NULL;
