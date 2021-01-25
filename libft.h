@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:29:47 by atemfack          #+#    #+#             */
-/*   Updated: 2021/01/11 19:34:40 by atemfack         ###   ########.fr       */
+/*   Updated: 2021/01/25 17:01:02 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,7 @@ int		ft_tolower(int c);
 int		ft_isspace(int c);
 int		ft_isredirection(char c);
 int		ft_isquotation(char c);
+int		ft_isnumber(char *str);
 
 /* String manipulation */
 char	*ft_isfx_ptrmove(char const *str, int (*f1)(int), int (*f2)(int));
