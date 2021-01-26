@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:29:47 by atemfack          #+#    #+#             */
-/*   Updated: 2021/01/25 17:01:02 by atemfack         ###   ########.fr       */
+/*   Updated: 2021/01/26 13:53:32 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,7 @@ char	*ft_strjoin(char const *s1, char const *s2); //*****
 char	*ft_strjoin2(char const *s1, char const *s2, char const *s3); //*****
 char	*ft_strtrim(char const *s1, char const *set); //*****
 char	**ft_split(char const *s, char c);//*****
+char	**ft_split2(char const *s, char c, int (*ft_isx)(char));//*****
 char	*ft_itoa(int n); //*****
 int		ft_atoi_base(char const *str, int base);
 char	*ft_utoa_base(unsigned int nb, int base);
@@ -124,6 +125,7 @@ void	ft_astrprint(char **s);
 char	**ft_astrinit(int size);
 void	ft_astrfree(char ***astr, void (*del)(void *));
 void	ft_astrnfree(char ***astr, int n);
+char	**ft_astrdup(char **astr);
 int		ft_astrsize(char **astr);
 int		ft_astrcpy(char **dest, char **src);
 t_list	*ft_astrtolst(char **astr);

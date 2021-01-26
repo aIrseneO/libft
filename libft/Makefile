@@ -6,7 +6,7 @@
 #    By: atemfack <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/18 16:30:05 by atemfack          #+#    #+#              #
-#*   Updated: 2021/01/25 17:02:37 by atemfack         ###   ########.fr       *#
+#*   Updated: 2021/01/26 13:54:54 by atemfack         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	ft_isspace.c ft_isnumber.c ft_strlen.c ft_strcpy.c ft_strlcpy.c \
 	ft_strcat.c ft_strlcat.c ft_strchr.c ft_strrchr.c ft_strstr.c ft_strnstr.c \
 	ft_strcmp.c ft_strncmp.c ft_atoi.c ft_strdup.c ft_substr.c ft_strjoin.c \
-	ft_strtrim.c ft_split.c ft_itoa.c ft_striter.c ft_striteri.c \
+	ft_strtrim.c ft_split.c ft_split2.c ft_itoa.c ft_striter.c ft_striteri.c \
 	ft_strmap.c ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c \
 	ft_putendl_fd.c ft_putnbr_fd.c ft_ternary.c \
 	ft_lstnew2.c ft_lstnew3.c ft_astrtolst.c ft_lsttoastr.c \
@@ -29,7 +29,8 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	ft_max.c ft_sort_rbubble.c ft_sort_selection.c ft_sort_bubble.c ft_swap.c \
 	ft_sort_rinsertion.c ft_sort_insertion.c ft_sort_rselection.c ft_cswap.c \
 	ft_isredirection.c ft_isquotation.c ft_strjoin2.c ft_getcwd.c ft_astrcpy.c \
-	ft_astrprint.c ft_astrinit.c ft_astrfree.c ft_astrnfree.c ft_astrsize.c
+	ft_astrprint.c ft_astrinit.c ft_astrfree.c ft_astrnfree.c ft_astrsize.c \
+	ft_astrdup.c
 	
 	
 HEADER		= libft.h
