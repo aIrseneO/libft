@@ -6,7 +6,7 @@
 #    By: atemfack <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/18 16:30:05 by atemfack          #+#    #+#              #
-#*   Updated: 2021/01/26 13:55:18 by atemfack         ###   ########.fr       *#
+#*   Updated: 2021/01/29 02:05:22 by atemfack         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,8 +27,8 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	ft_strcat.c ft_strlcat.c ft_strchr.c ft_strrchr.c ft_strstr.c ft_strnstr.c \
 	ft_strcmp.c ft_strncmp.c ft_atoi.c ft_strdup.c ft_substr.c ft_strjoin.c \
 	ft_strtrim.c ft_split.c ft_split2.c ft_itoa.c ft_striter.c ft_striteri.c \
-	ft_strmap.c ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c \
-	ft_putendl_fd.c ft_putnbr_fd.c ft_ternary.c \
+	ft_strmap.c ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c ft_strappend.c\
+	ft_putendl_fd.c ft_putnbr_fd.c ft_ternary.c ft_strndup.c ft_strappend2.c\
 	ft_lstnew2.c ft_lstnew3.c ft_astrtolst.c ft_lsttoastr.c \
 	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstiter.c \
 	ft_lstadd_back.c ft_lstdelone.c ft_lstdelhead.c ft_lstclear.c ft_lstmap.c \

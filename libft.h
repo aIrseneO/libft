@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/18 16:29:47 by atemfack          #+#    #+#             */
-/*   Updated: 2021/01/26 13:53:32 by atemfack         ###   ########.fr       */
+/*   Updated: 2021/01/29 03:03:00 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,8 @@ int		ft_isnumber(char *str);
 /* String manipulation */
 char	*ft_isfx_ptrmove(char const *str, int (*f1)(int), int (*f2)(int));
 size_t	ft_strlen(char const *s);
+char	*ft_strappend(char *dest, char const *src);
+char	*ft_strappend2(char *dest, char const *src, size_t destlenmax);
 char	*ft_strcpy(char *dest, char const *src); //Old cursus
 size_t	ft_strlcpy(char *dst, char const *src, size_t size);
 char	*ft_strcat(char *s1, char const *s2); //Old cursus
@@ -71,6 +73,7 @@ int		ft_strcmp(char const *s1, char const *s2);//Old cursus
 int		ft_strncmp(char const *s1, char const *s2, size_t n);
 int		ft_atoi(char const *str);
 char	*ft_strdup(char const *s1);
+char	*ft_strndup(char const *s1, size_t n);
 char	*ft_substr(char const *s, unsigned int start, size_t len); //*****
 char	*ft_strjoin(char const *s1, char const *s2); //*****
 char	*ft_strjoin2(char const *s1, char const *s2, char const *s3); //*****
