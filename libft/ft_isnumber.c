@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/25 16:55:07 by atemfack          #+#    #+#             */
-/*   Updated: 2021/01/25 23:09:35 by atemfack         ###   ########.fr       */
+/*   Updated: 2021/02/11 04:41:44 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 //		Check if a str is a number in between
 //	[-9223372036854775808, 9223372036854775807]
 //	Return the number of digits in the string "str"
+
 int	ft_isnumber(char *str)
 {
 	int		i;

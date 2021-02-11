@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 01:53:26 by atemfack          #+#    #+#             */
-/*   Updated: 2021/01/29 03:04:29 by atemfack         ###   ########.fr       */
+/*   Updated: 2021/02/11 04:42:59 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,3 @@ char	*ft_strappend2(char *dest, char const *src, size_t destlenmax)
 	dest[i] = 0;
 	return (dest);
 }
-
