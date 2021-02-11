@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/20 22:39:16 by atemfack          #+#    #+#             */
-/*   Updated: 2020/04/20 22:55:02 by atemfack         ###   ########.fr       */
+/*   Updated: 2021/02/11 02:00:28 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,15 @@
 
 int	ft_lstsize(t_list *lst)
 {
+	int	size;
+
 	if (!lst)
 		return (0);
-	return (ft_lstsize(lst->next) + 1);
+	size = 0;
+	while (lst)
+	{
+		size++;
+		lst = lst->next;
+	}
+	return (size);
 }

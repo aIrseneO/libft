@@ -1,39 +1,55 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_split2.c                                        :+:      :+:    :+:   */
+/*   ft_split3.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/26 02:42:15 by atemfack          #+#    #+#             */
-/*   Updated: 2021/02/06 04:30:09 by atemfack         ###   ########.fr       */
+/*   Created: 2021/01/29 13:43:14 by atemfack          #+#    #+#             */
+/*   Updated: 2021/02/06 05:07:55 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char	*ft_skip(char *s, char c, int (*fx)(char))
+static int	sp_is_y(char *s, int i, int (*fy)(char))
 {
-	char	x;
+	int	n;
 
-	while (*(s + 1))
+	n = 0;
+	while (i >= 0 && fy(s[i]))
 	{
-		if (fx(*s))
-		{
-			x = *s++;
-			while (*s && *s != x)
-				s++;
-			s++;
-		}
-		else if (*s == c)
-			break ;
-		else
-			s++;
+		n++;
+		i--;
 	}
-	return (s);
+	return (n % 2);
 }
 
-static t_list	*ft_strtolist(char *s, char c, int (*fx)(char))
+static char	*ft_skip(char *s, char c, int (*fx)(char), int (*fy)(char))
+{
+	int		i;
+	char	x;
+
+	i = 0;
+	while (s[i + 1])
+	{
+		if (fx(s[i]))
+		{
+			x = s[i++];
+			while (s[i] && !(s[i] == x && !sp_is_y(s, i - 1, fy)))
+				i++;
+			if (s[i + 1])
+				i++;
+		}
+		else if (s[i] == c && !sp_is_y(s, i - 1, fy))
+			break ;
+		else
+			i++;
+	}
+	return (s + i);
+}
+
+static t_list	*ft_strtolist(char *s, char c, int (*fx)(char), int (*fy)(char))
 {
 	t_list	*new;
 	t_list	*head;
@@ -44,7 +60,7 @@ static t_list	*ft_strtolist(char *s, char c, int (*fx)(char))
 	while (*s)
 	{
 		begin = s;
-		s = ft_skip(s, c, fx);
+		s = ft_skip(s, c, fx, fy);
 		end = s;
 		if (*s == c)
 			end--;
@@ -62,11 +78,12 @@ static t_list	*ft_strtolist(char *s, char c, int (*fx)(char))
 	return (head);
 }
 
-// Exactly as ft_split1 plus handles exception if `c` is in between `x`
-// where `x` is/are char(s) that passed to the function `fx` return(s) true.
-// In most cases `fx` will be ft_isquotations and `x` is `'` and `"`.
+// Exactly as ft_split2 plus handles exception when `c` is
+// previous by (2n + 1) `y`(s), n is a positif integer. 
+// `y` is/are char(s) that passed to the function `fy` return(s) true
+// In most cases fy will be ft_isbackslash and y is `\`.
 
-char	**ft_split2(char const *s, char c, int (*fx)(char))
+char	**ft_split3(char const *s, char c, int (*fx)(char), int (*fy)(char))
 {
 	t_list	*lst;
 	char	**astr;
@@ -77,7 +94,7 @@ char	**ft_split2(char const *s, char c, int (*fx)(char))
 		s++;
 	if (!(*s))
 		return (ft_astrinit(1));
-	lst = ft_strtolist((char *)s, c, fx);
+	lst = ft_strtolist((char *)s, c, fx, fy);
 	if (lst == NULL)
 		return (NULL);
 	astr = ft_lsttoastr(lst);

@@ -6,7 +6,7 @@
 #    By: atemfack <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/02/18 16:30:05 by atemfack          #+#    #+#              #
-#*   Updated: 2021/01/29 02:06:02 by atemfack         ###   ########.fr       *#
+#*   Updated: 2021/02/11 00:51:56 by atemfack         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	ft_strtrim.c ft_split.c ft_split2.c ft_itoa.c ft_striter.c ft_striteri.c \
 	ft_strmap.c ft_strmapi.c ft_putchar_fd.c ft_putstr_fd.c ft_strappend.c \
 	ft_putendl_fd.c ft_putnbr_fd.c ft_ternary.c ft_strndup.c ft_strappend2.c \
-	ft_lstnew2.c ft_lstnew3.c ft_astrtolst.c ft_lsttoastr.c \
+	ft_lstnew2.c ft_lstnew3.c ft_astrtolst.c ft_lsttoastr.c ft_split3.c \
 	ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstiter.c \
 	ft_lstadd_back.c ft_lstdelone.c ft_lstdelhead.c ft_lstclear.c ft_lstmap.c \
 	ft_rgbcolor.c ft_atoi_base.c ft_utoa_base.c ft_isfx_ptrmove.c ft_strrevs.c \
@@ -30,7 +30,7 @@ SRCS = ft_memset.c ft_bzero.c ft_memcpy.c ft_memccpy.c ft_memmove.c \
 	ft_sort_rinsertion.c ft_sort_insertion.c ft_sort_rselection.c ft_cswap.c \
 	ft_isredirection.c ft_isquotation.c ft_strjoin2.c ft_getcwd.c ft_astrcpy.c \
 	ft_astrprint.c ft_astrinit.c ft_astrfree.c ft_astrnfree.c ft_astrsize.c \
-	ft_astrdup.c
+	ft_astrdup.c ft_strdelchr.c ft_lstprint.c
 	
 	
 HEADER		= libft.h

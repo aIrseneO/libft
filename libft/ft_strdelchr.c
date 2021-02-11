@@ -1,23 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_astrsize.c                                      :+:      :+:    :+:   */
+/*   ft_strdelchr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/10 02:01:46 by atemfack          #+#    #+#             */
-/*   Updated: 2021/02/01 16:30:46 by atemfack         ###   ########.fr       */
+/*   Created: 2021/01/29 15:19:02 by atemfack          #+#    #+#             */
+/*   Updated: 2021/01/29 15:30:53 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
-size_t	ft_astrsize(char **astr)
+char	*ft_strdelchr(char *str, char c)
 {
-	size_t		size;
+	int	i;
+	int	j;
 
-	size = 0;
-	while (astr[size])
-		size++;
-	return (size);
+	i = 0;
+	j = 0;
+	while (str[j])
+	{
+		if (str[j] != c)
+			str[i++] = str[j++];
+		else
+			j++;
+	}
+	str[i] = '\0';
+	return (str);
 }
