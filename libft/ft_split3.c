@@ -6,7 +6,7 @@
 /*   By: atemfack <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/29 13:43:14 by atemfack          #+#    #+#             */
-/*   Updated: 2021/02/06 05:07:55 by atemfack         ###   ########.fr       */
+/*   Updated: 2021/02/11 22:41:34 by atemfack         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static char	*ft_skip(char *s, char c, int (*fx)(char), int (*fy)(char))
 	i = 0;
 	while (s[i + 1])
 	{
-		if (fx(s[i]))
+		if (fx(s[i]) && !sp_is_y(s, i - 1, fy))
 		{
 			x = s[i++];
 			while (s[i] && !(s[i] == x && !sp_is_y(s, i - 1, fy)))
