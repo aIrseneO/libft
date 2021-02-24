@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static int	pf_write_all_text_before_format(const char **format)
+static int		pf_write_all_text_before_format(const char **format)
 {
 	int			ct;
 	const char	*tmp;
@@ -29,11 +29,11 @@ static int	pf_write_all_text_before_format(const char **format)
 	return (ct);
 }
 
-int	ft_printf(const char *format, ...)
+int				ft_printf(const char *format, ...)
 {
-	va_list			args;
-	int				ct;
-	int				n;
+	va_list		args;
+	int			ct;
+	int			n;
 
 	va_start(args, (char *)format);
 	if (!format)

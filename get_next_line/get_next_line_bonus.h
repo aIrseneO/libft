@@ -18,7 +18,10 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-/* Default values for BUFFER_SIZE and FD_SIZE */
+/*
+** Default values for BUFFER_SIZE and FD_SIZE
+*/
+
 # ifndef FD_SIZE
 #  define FD_SIZE 32
 # endif

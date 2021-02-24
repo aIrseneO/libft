@@ -10,7 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-/* What if you weren't allowed to use the ternary (?:) operator */
+/*
+** What if you weren't allowed to use the ternary (?:) operator
+*/
 
 void	*ft_ternary(int logic, void *value1, void *value2)
 {

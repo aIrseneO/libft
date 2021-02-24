@@ -41,7 +41,7 @@ static int	pf_put(char *str, int n, t_format *fpara)
 	return (n);
 }
 
-int	pf_specifier_s(va_list args, t_format *fpara)
+int			pf_specifier_s(va_list args, t_format *fpara)
 {
 	size_t	len;
 	char	*str;

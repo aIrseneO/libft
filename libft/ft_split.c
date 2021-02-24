@@ -14,8 +14,8 @@
 
 static t_list	*ft_strtolist(char *s, char c, char *begin, char *end)
 {
-	t_list	*new;
-	t_list	*head;
+	t_list		*new;
+	t_list		*head;
 
 	head = NULL;
 	while (*s)
@@ -40,10 +40,10 @@ static t_list	*ft_strtolist(char *s, char c, char *begin, char *end)
 	return (head);
 }
 
-char	**ft_split(char const *s, char c)
+char			**ft_split(char const *s, char c)
 {
-	t_list	*lst;
-	char	**astr;
+	t_list		*lst;
+	char		**astr;
 
 	if (!s)
 		return (NULL);
@@ -61,16 +61,3 @@ char	**ft_split(char const *s, char c)
 		ft_lstclear(&lst, NULL);
 	return (astr);
 }
-
-/* To Test Usage: ./bin "string to split" "delimiter"
-int	main(int ac, char **av)
-{
-	if (ac != 3)
-		return (1);
-	char **astr;
-	astr = ft_split(av[1], *av[2]);
-	ft_astrprint(astr);
-	ft_astrfree(&astr, free);
-	return (0);
-}
-*/

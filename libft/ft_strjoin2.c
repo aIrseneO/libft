@@ -12,10 +12,10 @@
 
 #include "libft.h"
 
-static char *join3(char const *s1, char const *s2, char const *s3)
+static char		*join3(char const *s1, char const *s2, char const *s3)
 {
-	size_t	i;
-	char	*s;
+	size_t		i;
+	char		*s;
 
 	s = (char *)malloc(sizeof(*s) * (ft_strlen(s1) + ft_strlen(s2)
 				+ ft_strlen(s3) + 1));
@@ -32,7 +32,7 @@ static char *join3(char const *s1, char const *s2, char const *s3)
 	return (s);
 }
 
-char	*ft_strjoin2(char const *s1, char const *s2, char const *s3)
+char			*ft_strjoin2(char const *s1, char const *s2, char const *s3)
 {
 	if (!s1)
 	{
@@ -43,12 +43,12 @@ char	*ft_strjoin2(char const *s1, char const *s2, char const *s3)
 			return (ft_strdup(s3));
 		}
 		if (!s3)
-			return(ft_strdup(s2));
+			return (ft_strdup(s2));
 		return (ft_strjoin(s2, s3));
 	}
 	if (!s2)
 	{
-		if(!s3)
+		if (!s3)
 			return (ft_strdup(s1));
 		return (ft_strjoin(s1, s3));
 	}

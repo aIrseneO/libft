@@ -12,14 +12,14 @@
 
 #include "libft.h"
 
-static int	nbrint(unsigned int x)
+static int			nbrint(unsigned int x)
 {
 	if (x >= 10)
 		return (nbrint(x / 10) + 1);
 	return (1);
 }
 
-static void	fill(unsigned int nb, int n, char *s)
+static void			fill(unsigned int nb, int n, char *s)
 {
 	s[n + 1] = '\0';
 	while (nb >= 10)
@@ -30,7 +30,7 @@ static void	fill(unsigned int nb, int n, char *s)
 	s[n] = nb % 10 + 48;
 }
 
-char	*ft_itoa(int nb)
+char				*ft_itoa(int nb)
 {
 	int				len;
 	int				signe;

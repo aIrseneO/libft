@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static char	*pf_str(char **str, int i)
+static char					*pf_str(char **str, int i)
 {
 	*str = (char *)malloc(sizeof(**str) * (i + 1));
 	if (*str == NULL)
@@ -23,7 +23,8 @@ static char	*pf_str(char **str, int i)
 	return (*str);
 }
 
-static char	*pf_utoa_hex(unsigned long long int nbr, t_format *fpara)
+static char					*pf_utoa_hex(unsigned long long int nbr,
+								t_format *fpara)
 {
 	char					*str;
 	unsigned int			i;
@@ -51,10 +52,11 @@ static char	*pf_utoa_hex(unsigned long long int nbr, t_format *fpara)
 	return (str);
 }
 
-static char	*pf_add_precision_undef_beh(char *str, t_format *fpara, int n)
+static char					*pf_add_precision_undef_beh(char *str,
+								t_format *fpara, int n)
 {
-	char	*s;
-	int		nbr;
+	char					*s;
+	int						nbr;
 
 	if (!(fpara->dot == '.' && fpara->precision > n - 2))
 		return (str);
@@ -73,7 +75,7 @@ static char	*pf_add_precision_undef_beh(char *str, t_format *fpara, int n)
 	return (s);
 }
 
-static int	pf_put(char *str, int n, t_format *fpara)
+static int					pf_put(char *str, int n, t_format *fpara)
 {
 	if (fpara->width > n)
 	{
@@ -97,9 +99,9 @@ static int	pf_put(char *str, int n, t_format *fpara)
 	return (n);
 }
 
-int	pf_specifier_p(va_list args, t_format *fpara)
+int							pf_specifier_p(va_list args, t_format *fpara)
 {
-	char	*str;
+	char					*str;
 
 	str = pf_utoa_hex(va_arg(args, unsigned long long int), fpara);
 	if (str == NULL)

@@ -14,7 +14,7 @@
 
 static int	pf_put(char *str, t_format *fpara)
 {
-	int	n;
+	int		n;
 
 	n = fpara->width - 1;
 	if (fpara->flags[0] == '-')
@@ -30,7 +30,7 @@ static int	pf_put(char *str, t_format *fpara)
 	return (fpara->width);
 }
 
-int	pf_specifier_mod(t_format *fpara)
+int			pf_specifier_mod(t_format *fpara)
 {
 	char	*str;
 

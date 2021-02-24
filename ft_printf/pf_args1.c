@@ -12,10 +12,10 @@
 
 #include "ft_printf.h"
 
-static char	*pf_extract_format(char **format)
+static char		*pf_extract_format(char **format)
 {
-	char	*specifiers;
-	size_t	n;
+	char		*specifiers;
+	size_t		n;
 
 	specifiers = "cspdiuxX%nf";
 	n = 0;
@@ -31,7 +31,7 @@ static char	*pf_extract_format(char **format)
 	return (specifiers);
 }
 
-static void	pf_initialize(t_format *fpara)
+static void		pf_initialize(t_format *fpara)
 {
 	fpara->flags[0] = '1';
 	fpara->flags[1] = '1';
@@ -46,7 +46,7 @@ static void	pf_initialize(t_format *fpara)
 	fpara->specifier = 0;
 }
 
-static int	pf_free(char *s1, t_format *x)
+static int		pf_free(char *s1, t_format *x)
 {
 	if (s1)
 		free(s1);
@@ -55,7 +55,7 @@ static int	pf_free(char *s1, t_format *x)
 	return (-1);
 }
 
-int	pf_args1(char **format, va_list args, int ct)
+int				pf_args1(char **format, va_list args, int ct)
 {
 	char		*nformat;
 	t_format	*fpara;

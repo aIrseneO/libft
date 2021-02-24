@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static char	*ft_create_str(char **str, int len, unsigned int nb)
+static char			*ft_create_str(char **str, int len, unsigned int nb)
 {
 	*str = (char *)malloc(sizeof(**str) * (len + 1));
 	if (str == NULL)
@@ -23,7 +23,7 @@ static char	*ft_create_str(char **str, int len, unsigned int nb)
 	return (*str);
 }
 
-char	*ft_utoa_base(unsigned int nb, int base)
+char				*ft_utoa_base(unsigned int nb, int base)
 {
 	int				len;
 	char			*str;

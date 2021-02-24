@@ -18,10 +18,14 @@
 # include <unistd.h>
 # include <stdlib.h>
 
-/* Default value for BUFFER_SIZE */
+/*
+** Default value for BUFFER_SIZE
+*/
+
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 128 
+#  define BUFFER_SIZE 128
 # endif
+
 size_t		gnl_strlen(char const *s);
 char		*gnl_strchr_endl(char const *s);
 char		*gnl_strncpy(char *dst, char const *src, int n);

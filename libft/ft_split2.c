@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-static char	*ft_skip(char *s, char c, int (*fx)(char))
+static char		*ft_skip(char *s, char c, int (*fx)(char))
 {
-	char	x;
+	char		x;
 
 	while (*(s + 1))
 	{
@@ -35,10 +35,10 @@ static char	*ft_skip(char *s, char c, int (*fx)(char))
 
 static t_list	*ft_strtolist(char *s, char c, int (*fx)(char))
 {
-	t_list	*new;
-	t_list	*head;
-	char	*begin;
-	char	*end;
+	t_list		*new;
+	t_list		*head;
+	char		*begin;
+	char		*end;
 
 	head = NULL;
 	while (*s)
@@ -62,14 +62,16 @@ static t_list	*ft_strtolist(char *s, char c, int (*fx)(char))
 	return (head);
 }
 
-// Exactly as ft_split1 plus handles exception if `c` is in between `x`
-// where `x` is/are char(s) that passed to the function `fx` return(s) true.
-// In most cases `fx` will be ft_isquotations and `x` is `'` and `"`.
+/*
+** Exactly as ft_split1 plus handles exception if `c` is in between `x`
+** where `x` is/are char(s) that passed to the function `fx` return(s) true.
+** In most cases `fx` will be ft_isquotations and `x` is `'` and `"`.
+*/
 
-char	**ft_split2(char const *s, char c, int (*fx)(char))
+char			**ft_split2(char const *s, char c, int (*fx)(char))
 {
-	t_list	*lst;
-	char	**astr;
+	t_list		*lst;
+	char		**astr;
 
 	if (!s)
 		return (NULL);

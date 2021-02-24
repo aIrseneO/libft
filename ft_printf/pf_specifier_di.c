@@ -12,10 +12,11 @@
 
 #include "ft_printf.h"
 
-static char	*pf_ad_precis(char *str, t_format *fpara, size_t n, short int signe)
+static char		*pf_ad_precis(char *str, t_format *fpara, size_t n,
+					short int signe)
 {
-	char	*s;
-	int		precision;
+	char		*s;
+	int			precision;
 
 	if (fpara->dot == '.' && fpara->precision >= 0)
 		precision = fpara->precision;
@@ -41,11 +42,11 @@ static char	*pf_ad_precis(char *str, t_format *fpara, size_t n, short int signe)
 	return (str);
 }
 
-static char	*pf_begin(char *s, t_format *fpara, short int signe)
+static char		*pf_begin(char *s, t_format *fpara, short int signe)
 {
-	size_t	n;
-	char	*t;
-	char	c;
+	size_t		n;
+	char		*t;
+	char		c;
 
 	if (signe == -1)
 		c = '-';
@@ -68,7 +69,7 @@ static char	*pf_begin(char *s, t_format *fpara, short int signe)
 	return (t);
 }
 
-static int	pf_put(char *str, int n, t_format *fpara)
+static int		pf_put(char *str, int n, t_format *fpara)
 {
 	if (fpara->width > n)
 	{
@@ -92,9 +93,9 @@ static int	pf_put(char *str, int n, t_format *fpara)
 	return (n);
 }
 
-static int	pf_str(t_format *fpara, int n, short int signe)
+static int		pf_str(t_format *fpara, int n, short int signe)
 {
-	char	*str;
+	char		*str;
 
 	if (n == -2147483648)
 		str = ft_strdup("2147483648");
@@ -111,7 +112,7 @@ static int	pf_str(t_format *fpara, int n, short int signe)
 	return (pf_put(str, ft_strlen(str), fpara));
 }
 
-int	pf_specifier_di(va_list args, t_format *fpara)
+int				pf_specifier_di(va_list args, t_format *fpara)
 {
 	char		*str;
 	short int	signe;

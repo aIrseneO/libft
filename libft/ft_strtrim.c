@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-static char	*ft_null_str(void)
+static char		*ft_null_str(void)
 {
-	char	*new;
+	char		*new;
 
 	new = (char *)malloc(sizeof(*new));
 	if (new == NULL)
@@ -23,7 +23,7 @@ static char	*ft_null_str(void)
 	return (new);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char			*ft_strtrim(char const *s1, char const *set)
 {
 	int			i;
 	char		*new;

@@ -12,9 +12,9 @@
 
 #include "libft.h"
 
-static int	sp_is_y(char *s, int i, int (*fy)(char))
+static int		sp_is_y(char *s, int i, int (*fy)(char))
 {
-	int	n;
+	int			n;
 
 	n = 0;
 	while (i >= 0 && fy(s[i]))
@@ -25,10 +25,10 @@ static int	sp_is_y(char *s, int i, int (*fy)(char))
 	return (n % 2);
 }
 
-static char	*ft_skip(char *s, char c, int (*fx)(char), int (*fy)(char))
+static char		*ft_skip(char *s, char c, int (*fx)(char), int (*fy)(char))
 {
-	int		i;
-	char	x;
+	int			i;
+	char		x;
 
 	i = 0;
 	while (s[i + 1])
@@ -51,10 +51,10 @@ static char	*ft_skip(char *s, char c, int (*fx)(char), int (*fy)(char))
 
 static t_list	*ft_strtolist(char *s, char c, int (*fx)(char), int (*fy)(char))
 {
-	t_list	*new;
-	t_list	*head;
-	char	*begin;
-	char	*end;
+	t_list		*new;
+	t_list		*head;
+	char		*begin;
+	char		*end;
 
 	head = NULL;
 	while (*s)
@@ -78,15 +78,18 @@ static t_list	*ft_strtolist(char *s, char c, int (*fx)(char), int (*fy)(char))
 	return (head);
 }
 
-// Exactly as ft_split2 plus handles exception when `c` is
-// previous by (2n + 1) `y`(s), n is a positif integer. 
-// `y` is/are char(s) that passed to the function `fy` return(s) true
-// In most cases fy will be ft_isbackslash and y is `\`.
+/*
+** Exactly as ft_split2 plus handles exception when `c` is
+** previous by (2n + 1) `y`(s), n is a positif integer.
+** `y` is/are char(s) that passed to the function `fy` return(s) true
+** In most cases fy will be ft_isbackslash and y is `\`.
+*/
 
-char	**ft_split3(char const *s, char c, int (*fx)(char), int (*fy)(char))
+char			**ft_split3(char const *s, char c, int (*fx)(char),
+					int (*fy)(char))
 {
-	t_list	*lst;
-	char	**astr;
+	t_list		*lst;
+	char		**astr;
 
 	if (!s)
 		return (NULL);

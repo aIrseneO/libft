@@ -12,7 +12,7 @@
 
 #include "get_next_line_bonus.h"
 
-static int	gnl_free(int n, char *ptr, char **as)
+static int		gnl_free(int n, char *ptr, char **as)
 {
 	if (ptr)
 		free(ptr);
@@ -24,10 +24,10 @@ static int	gnl_free(int n, char *ptr, char **as)
 	return (n);
 }
 
-static int	gnl_extract_line(int fd, char *buffer, char **line, char *reste)
+static int		gnl_extract_line(int fd, char *buffer, char **line, char *reste)
 {
-	int		n;
-	char	*s;
+	int			n;
+	char		*s;
 
 	*line = gnl_strjoin(reste, NULL);
 	if (*line == NULL)
@@ -52,11 +52,11 @@ static int	gnl_extract_line(int fd, char *buffer, char **line, char *reste)
 	return (n);
 }
 
-static int	gnl_clean_line(char **line, char **reste)
+static int		gnl_clean_line(char **line, char **reste)
 {
-	int		n;
-	char	*s;
-	char	*tmp;
+	int			n;
+	char		*s;
+	char		*tmp;
 
 	s = gnl_strchr_endl(*line);
 	if (s == NULL)
@@ -78,7 +78,7 @@ static int	gnl_clean_line(char **line, char **reste)
 	return (1);
 }
 
-int	get_next_line(int fd, char **line)
+int				get_next_line(int fd, char **line)
 {
 	int			n;
 	char		*buffer;

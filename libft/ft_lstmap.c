@@ -14,8 +14,8 @@
 
 static t_list	*lstmap(t_list *lst, void *(*f)(void *))
 {
-	t_list	*tmp1;
-	t_list	*tmp2;
+	t_list		*tmp1;
+	t_list		*tmp2;
 
 	if (!lst->next)
 		return (ft_lstnew(f(lst->content)));
@@ -29,7 +29,7 @@ static t_list	*lstmap(t_list *lst, void *(*f)(void *))
 	return (tmp1);
 }
 
-t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
+t_list			*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
 	if (!lst || !f)
 		return (NULL);

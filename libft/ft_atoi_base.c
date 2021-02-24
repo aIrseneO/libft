@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int	ft_get_signe(char const **str)
+static int		ft_get_signe(char const **str)
 {
 	if (**str == '-')
 	{
@@ -28,7 +28,7 @@ static int	ft_get_signe(char const **str)
 		return (1);
 }
 
-int	ft_atoi_base(char const *str, int base)
+int				ft_atoi_base(char const *str, int base)
 {
 	char		c;
 	long long	nbr;

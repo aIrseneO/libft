@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static char	*pf_utoa(unsigned int nb)
+static char			*pf_utoa(unsigned int nb)
 {
 	int				len;
 	char			*str;
@@ -38,11 +38,11 @@ static char	*pf_utoa(unsigned int nb)
 	return (str);
 }
 
-static char	*pf_add_precision(char *str, t_format *fpara, size_t n)
+static char			*pf_add_precision(char *str, t_format *fpara, size_t n)
 {
-	char	*s;
-	int		i;
-	int		precision;
+	char			*s;
+	int				i;
+	int				precision;
 
 	if (fpara->dot == '.' && fpara->precision >= 0)
 		precision = fpara->precision;
@@ -67,7 +67,7 @@ static char	*pf_add_precision(char *str, t_format *fpara, size_t n)
 	return (str);
 }
 
-static int	pf_put(char *str, int n, t_format *fpara)
+static int			pf_put(char *str, int n, t_format *fpara)
 {
 	if (fpara->width > n)
 	{
@@ -91,7 +91,7 @@ static int	pf_put(char *str, int n, t_format *fpara)
 	return (n);
 }
 
-int	pf_specifier_u(va_list args, t_format *fpara)
+int					pf_specifier_u(va_list args, t_format *fpara)
 {
 	char			*str;
 	unsigned int	n;

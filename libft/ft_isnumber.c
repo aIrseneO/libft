@@ -12,11 +12,13 @@
 
 #include "libft.h"
 
-//		Check if a str is a number in between
-//	[-9223372036854775808, 9223372036854775807]
-//	Return the number of digits in the string "str"
+/*
+**		Check if a str is a number in between
+**	[-9223372036854775808, 9223372036854775807]
+**	Return the number of digits in the string "str"
+*/
 
-int	ft_isnumber(char *str)
+int			ft_isnumber(char *str)
 {
 	int		i;
 	char	sign;

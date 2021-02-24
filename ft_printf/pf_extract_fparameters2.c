@@ -12,7 +12,7 @@
 
 #include "ft_printf.h"
 
-static void	pf_extract_flags(char flags[5], char c)
+static void		pf_extract_flags(char flags[5], char c)
 {
 	if (c == '-')
 		flags[0] = c;
@@ -26,7 +26,7 @@ static void	pf_extract_flags(char flags[5], char c)
 		flags[4] = c;
 }
 
-static void	pf_extract_value(int *value, va_list args, char **nformat)
+static void		pf_extract_value(int *value, va_list args, char **nformat)
 {
 	if (**nformat == '*')
 	{
@@ -41,7 +41,7 @@ static void	pf_extract_value(int *value, va_list args, char **nformat)
 	}
 }
 
-static void	pf_extract_length(t_format *fpara, char **nformat)
+static void		pf_extract_length(t_format *fpara, char **nformat)
 {
 	if (**nformat == 'l')
 	{
@@ -65,7 +65,8 @@ static void	pf_extract_length(t_format *fpara, char **nformat)
 	}
 }
 
-int	pf_extract_fparameters2(char *nformat, va_list args, t_format *fpara)
+int				pf_extract_fparameters2(char *nformat, va_list args,
+					t_format *fpara)
 {
 	while (ft_strchr("-+ #0", *nformat))
 		pf_extract_flags(fpara->flags, *nformat++);

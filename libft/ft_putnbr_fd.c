@@ -14,7 +14,7 @@
 
 static int	ft_recursive(long nbr, char *str, int i)
 {
-	int	j;
+	int		j;
 
 	if (nbr < 10)
 	{
@@ -26,11 +26,11 @@ static int	ft_recursive(long nbr, char *str, int i)
 	return (j + 1);
 }
 
-void	ft_putnbr_fd(int n, int fd)
+void		ft_putnbr_fd(int n, int fd)
 {
-	long		nbr;
-	char		str[12];
-	int			i;
+	long	nbr;
+	char	str[12];
+	int		i;
 
 	i = 0;
 	nbr = n;
