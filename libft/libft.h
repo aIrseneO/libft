@@ -63,6 +63,7 @@ int					ft_isspace(int c);
 int					ft_isredirection(char c);
 int					ft_isquotation(char c);
 int					ft_isnumber(char *str);
+size_t				ft_isname(char *str);
 
 /*
 ** String manipulation
