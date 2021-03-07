@@ -1,13 +1,13 @@
 # Libft
 The aim of this project is to code a C static library regrouping usual functions that
-will be used in other projects. This project is written in compliance with 42 norme accessible [here](https://drive.google.com/file/d/1cGpOsXhTSsJswEq_gM2FJ4BaF5t6t1k_/view?usp=sharing "42 norme").
+will be used in other projects. This project is written in compliance with 42's norme accessible [here](https://drive.google.com/file/d/1cGpOsXhTSsJswEq_gM2FJ4BaF5t6t1k_/view?usp=sharing "42 norme").
 ## How to run it?
 A Linux distribution / Unix based system is required. It has been tested on major Linux distro and Mac OS. [GCC](https://gcc.gnu.org/ "gcc web page") is used to compile see **Makefile**.<br>
 To create the library, simply run 
 ```bash
 make
 ```
-If failure due to missing dependencies, install them and re-run the command. Upon success, the library will be created under the name **_libft.a_**. To clean objects files run:
+If failure due to missing dependencies, install them and re-run the command. Upon success, the library will be created under the name **_libft.a_**.<br>To clean object files run:
 ```bash
 make clean
 ```
