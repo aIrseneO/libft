@@ -21,7 +21,7 @@ make re
 ```
 run
 ```bash
-make fe
+make f
 ```
 to make the library and clean object files at once.<br>
 Every single function of the library can be compile with
