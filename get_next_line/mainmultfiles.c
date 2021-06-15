@@ -1,15 +1,9 @@
-#include <stdio.h>
-#include <string.h>
-#include <fcntl.h>
-#include "get_next_line.h"
+/******************************************************************************/
+/*     Copyright (c) 2020 Arsene Temfack                                      */
+/*                                                                            */
+/*     SPDX-License-Identifier: MIT                                           */
+/******************************************************************************/
 
-int				main(void)
-{
-	char		*line1;
-	char		*line2;
-	char		*line3;
-	int			fd1;
-	int			fd2;
 	int			fd3;
 	int			ret1;
 	int			ret2;
